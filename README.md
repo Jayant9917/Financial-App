@@ -7,6 +7,7 @@ A professional, SEO-optimized web application for home loan financial services b
 - **SEO Optimized**: Complete SEO setup with metadata, sitemap, robots.txt, and structured data
 - **Modern Stack**: Next.js 16 with App Router, TypeScript, and Tailwind CSS
 - **Component Library**: shadcn/ui components for beautiful, accessible UI
+- **Animations**: Framer Motion for smooth, performant animations
 - **Clean Architecture**: Well-organized folder structure for scalability
 - **API Routes**: Backend logic in Next.js API routes
 - **Type Safety**: Full TypeScript support with proper type definitions
@@ -81,6 +82,28 @@ npx shadcn@latest add button
 npx shadcn@latest add card
 npx shadcn@latest add form
 ```
+
+**Already Installed Components:**
+- Button, Card, Input, Label, Textarea, Select, Form
+- Dialog, Alert, Badge, Separator
+
+## 🎭 Animations with Framer Motion
+
+This project includes Framer Motion for animations. See [docs/ANIMATIONS.md](docs/ANIMATIONS.md) for complete animation guide.
+
+**Quick Example:**
+```tsx
+import { AnimatedSection } from '@/components/animated-section';
+
+<AnimatedSection variant="fadeInUp">
+  <YourContent />
+</AnimatedSection>
+```
+
+**Available Animation Components:**
+- `AnimatedSection` - Scroll-triggered section animations
+- `AnimatedPage` - Page transition animations
+- `AnimatedCounter` - Number counter animations
 
 ## 📊 SEO Features
 

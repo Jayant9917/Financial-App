@@ -1,11 +1,18 @@
 import { generateMetadata as generatePageMetadata } from '@/lib/metadata';
 import { StructuredData } from '@/components/structured-data';
-import { generateWebSiteSchema, generateOrganizationSchema } from '@/lib/structured-data';
+import { generateWebSiteSchema, generateOrganizationSchema, generateFinancialServiceSchema } from '@/lib/structured-data';
 import { SITE_CONFIG } from '@/lib/constants';
+import { Navbar } from '@/components/navbar';
+import { HeroSection } from '@/components/hero-section';
+import { ServicesSection } from '@/components/services-section';
+import { WhyChooseUsSection } from '@/components/why-choose-us-section';
+import { BanksSection } from '@/components/banks-section';
+import { ContactSection } from '@/components/contact-section';
+import { Footer } from '@/components/footer';
 
 export const metadata = generatePageMetadata({
-  title: 'Home Loan Financial Services',
-  description: 'Professional home loan services and financial solutions for your dream home. Get competitive rates, expert advice, and fast approval.',
+  title: 'Home Loan Financial Services - Quick Approvals & Low Interest Rates',
+  description: 'Get your dream home with our hassle-free home loan services. Quick approvals, competitive rates from top banks, and flexible repayment plans. Apply now for Home Loan, LAP, Mortgage Loan, Balance Transfer & Top-Up Loan.',
   path: '/',
 });
 
@@ -16,36 +23,31 @@ export default function Home() {
       name: SITE_CONFIG.name,
       url: SITE_CONFIG.url,
       description: SITE_CONFIG.description,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        telephone: '+91-8197222439',
+        contactType: 'Customer Service',
+      },
     }),
+    generateFinancialServiceSchema(
+      'Home Loan Services',
+      'Professional home loan services including Home Loan, LAP, Mortgage Loan, Balance Transfer, and Top-Up Loan with quick approvals and competitive rates.',
+      SITE_CONFIG.name
+    ),
   ];
 
   return (
     <>
       <StructuredData data={structuredData} />
-      <main className="flex min-h-screen flex-col items-center justify-center">
-        <div className="container mx-auto px-4 py-16 text-center">
-          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Home Loan Financial Services
-          </h1>
-          <p className="mb-8 text-lg text-muted-foreground sm:text-xl">
-            Professional home loan services and financial solutions for your dream home
-          </p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <a
-              href="/loan-calculator"
-              className="inline-flex h-11 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Calculate Loan
-            </a>
-            <a
-              href="/apply-now"
-              className="inline-flex h-11 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
-            >
-              Apply Now
-            </a>
-          </div>
-        </div>
+      <Navbar />
+      <main className="pt-20">
+        <HeroSection />
+        <ServicesSection />
+        <WhyChooseUsSection />
+        <BanksSection />
+        <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }
