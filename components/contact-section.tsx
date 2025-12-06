@@ -3,8 +3,9 @@
 import { AnimatedSection } from '@/components/animated-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Phone, MessageCircle, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function ContactSection() {
   return (
@@ -25,7 +26,15 @@ export function ContactSection() {
               <CardHeader>
                 <div className="mb-4 flex justify-center">
                   <div className="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center">
-                    <Phone className="h-7 w-7 text-blue-600" />
+                    <div className="h-7 w-7 relative">
+                      <Image
+                        src="/images/usedIcons/phone.png"
+                        alt="Phone icon"
+                        width={28}
+                        height={28}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
                   </div>
                 </div>
                 <CardTitle className="text-lg">Call Us</CardTitle>
@@ -34,8 +43,23 @@ export function ContactSection() {
                 <CardDescription className="mb-4">
                   Speak directly with our loan experts
                 </CardDescription>
-                <Button asChild variant="outline" className="w-full mt-auto">
-                  <a href="tel:+918197222439">+91 8197222439</a>
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  className="w-full mt-auto bg-blue-50 border-2 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
+                >
+                  <a href="tel:+918197222439" className="flex items-center gap-2">
+                    <div className="h-5 w-5 relative">
+                      <Image
+                        src="/images/usedIcons/phone.png"
+                        alt="Phone icon"
+                        width={20}
+                        height={20}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <span>+91 8197222439</span>
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -46,17 +70,14 @@ export function ContactSection() {
               <CardHeader>
                 <div className="mb-4 flex justify-center">
                   <div className="h-14 w-14 rounded-full bg-green-100 flex items-center justify-center">
-                    <div className="h-8 w-8 flex items-center justify-center">
-                      <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
+                    <div className="h-7 w-7 relative">
+                      <Image
+                        src="/images/usedIcons/whatsapp.png"
+                        alt="WhatsApp icon"
+                        width={28}
+                        height={28}
                         className="h-full w-full object-contain"
-                        aria-label="WhatsApp"
-                      >
-                        <source src="/images/usedIcons/Whatsapp default state animation.webm" type="video/webm" />
-                      </video>
+                      />
                     </div>
                   </div>
                 </div>
@@ -66,13 +87,27 @@ export function ContactSection() {
                 <CardDescription className="mb-4">
                   Chat with us on WhatsApp
                 </CardDescription>
-                <Button asChild variant="outline" className="w-full mt-auto">
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  className="w-full mt-auto bg-green-50 border-2 border-green-200 text-green-700 hover:bg-green-100 hover:border-green-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
+                >
                   <a
                     href="https://wa.me/918197222439"
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="flex items-center gap-2"
                   >
-                    Message Us
+                    <div className="h-5 w-5 relative">
+                      <Image
+                        src="/images/usedIcons/whatsapp.png"
+                        alt="WhatsApp icon"
+                        width={20}
+                        height={20}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <span>Message Us</span>
                   </a>
                 </Button>
               </CardContent>
@@ -93,8 +128,15 @@ export function ContactSection() {
                 <CardDescription className="mb-4">
                   Send us an email
                 </CardDescription>
-                <Button asChild variant="outline" className="w-full mt-auto">
-                  <Link href="/contact">Contact Form</Link>
+                <Button 
+                  asChild 
+                  variant="outline" 
+                  className="w-full mt-auto bg-purple-50 border-2 border-purple-200 text-purple-700 hover:bg-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
+                >
+                  <Link href="/contact" className="flex items-center gap-2">
+                    <Mail className="h-5 w-5" />
+                    <span>Contact Form</span>
+                  </Link>
                 </Button>
               </CardContent>
             </Card>

@@ -15,6 +15,8 @@ export interface OrganizationSchema {
     telephone: string;
     contactType: string;
     email?: string;
+    areaServed?: string;
+    availableLanguage?: string;
   };
   sameAs?: string[];
 }
@@ -55,7 +57,7 @@ export function generateOrganizationSchema(
 ): OrganizationSchema {
   return {
     '@context': 'https://schema.org',
-    '@type': 'FinancialService',
+    '@type': 'Organization',
     name: data.name || 'Shivay Finance and Services',
     url: data.url || 'https://yourdomain.com',
     logo: data.logo,
@@ -95,7 +97,7 @@ export function generateFinancialServiceSchema(
   serviceName: string,
   description: string,
   providerName: string,
-  areaServed: string = 'US'
+  areaServed: string = 'IN'
 ): FinancialServiceSchema {
   return {
     '@context': 'https://schema.org',

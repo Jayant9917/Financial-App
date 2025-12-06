@@ -95,16 +95,6 @@ export function ServicesSection() {
             );
           })}
         </AnimatedSection>
-
-        {/* Additional Services */}
-        <AnimatedSection className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 px-6 py-3 bg-muted rounded-full">
-            <span className="text-2xl">🏠</span>
-            <span className="text-sm font-medium">
-              HOME LOAN • LAP | MORTGAGE LOAN • BALANCE TRANSFER • TOP-UP LOAN
-            </span>
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   );

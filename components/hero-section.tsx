@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/animated-section';
-import { ArrowRight, Phone, MessageCircle, Home } from 'lucide-react';
+import { ArrowRight, Home } from 'lucide-react';
 
 export function HeroSection() {
   return (
@@ -62,10 +62,18 @@ export function HeroSection() {
                 asChild 
                 variant="outline" 
                 size="lg" 
-                className="group text-sm sm:text-base px-5 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px] bg-white border-2 border-slate-200 hover:border-blue-500 hover:bg-blue-50 text-slate-700 hover:text-blue-700 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg font-medium"
+                className="group text-sm sm:text-base px-5 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px] bg-white border-2 border-slate-200 hover:border-blue-500 hover:bg-blue-50 text-slate-700 hover:text-blue-700 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg font-medium flex items-center"
               >
-                <a href="tel:+918197222439">
-                  <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5 transition-colors group-hover:text-blue-600" />
+                <a href="tel:+918197222439" className="flex items-center">
+                  <div className="mr-2 h-4 w-4 sm:h-5 sm:w-5 relative">
+                    <Image
+                      src="/images/usedIcons/phone.png"
+                      alt="Phone icon"
+                      width={20}
+                      height={20}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
                   <span className="hidden sm:inline">+91 8197222439</span>
                   <span className="sm:hidden">Call</span>
                 </a>
@@ -74,15 +82,24 @@ export function HeroSection() {
                 asChild 
                 variant="outline" 
                 size="lg" 
-                className="group text-sm sm:text-base px-5 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px] bg-white border-2 border-slate-200 hover:border-green-500 hover:bg-green-50 text-slate-700 hover:text-green-700 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg font-medium"
+                className="group text-sm sm:text-base px-5 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px] bg-white border-2 border-slate-200 hover:border-green-500 hover:bg-green-50 text-slate-700 hover:text-green-700 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg font-medium flex items-center"
               >
                 <a
                   href="https://wa.me/918197222439"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center"
                 >
-                  <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5 transition-colors group-hover:text-green-600" />
-                  WhatsApp
+                  <div className="mr-2 h-4 w-4 sm:h-5 sm:w-5 relative">
+                    <Image
+                      src="/images/usedIcons/whatsapp.png"
+                      alt="WhatsApp icon"
+                      width={20}
+                      height={20}
+                      className="h-full w-full object-contain"
+                    />
+                  </div>
+                  <span>WhatsApp</span>
                 </a>
               </Button>
             </div>

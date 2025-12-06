@@ -23,16 +23,20 @@ export default function Home() {
       name: SITE_CONFIG.name,
       url: SITE_CONFIG.url,
       description: SITE_CONFIG.description,
+      logo: `${SITE_CONFIG.url}/images/logo/real estate.webm`,
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: '+91-8197222439',
         contactType: 'Customer Service',
+        areaServed: 'IN',
+        availableLanguage: 'en',
       },
     }),
     generateFinancialServiceSchema(
       'Home Loan Services',
       'Professional home loan services including Home Loan, LAP, Mortgage Loan, Balance Transfer, and Top-Up Loan with quick approvals and competitive rates.',
-      SITE_CONFIG.name
+      SITE_CONFIG.name,
+      'IN'
     ),
   ];
 
