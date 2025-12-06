@@ -1,32 +1,14 @@
 import type { Metadata } from "next";
-import { Inter, Outfit, Poppins, Urbanist } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { generateMetadata as generateSiteMetadata } from "@/lib/metadata";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-});
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
-});
-
-const urbanist = Urbanist({
-  variable: "--font-urbanist",
-  subsets: ["latin"],
-  display: "swap",
+  preload: true,
 });
 
 // Root metadata for SEO
@@ -48,7 +30,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
       </head>
       <body
-        className={`${inter.variable} ${outfit.variable} ${poppins.variable} ${urbanist.variable} font-sans antialiased`}
+        className={`${poppins.variable} font-sans antialiased`}
         suppressHydrationWarning
         style={{ fontFamily: 'var(--font-poppins), sans-serif' }}
       >

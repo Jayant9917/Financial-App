@@ -1,11 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/animated-section';
-import { ArrowRight, Home } from 'lucide-react';
 
 export function HeroSection() {
   const pathname = usePathname();
