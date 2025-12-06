@@ -4,7 +4,7 @@
  */
 
 export const SITE_CONFIG = {
-  name: 'Home Loan Financial Services',
+  name: 'Shivay Finance and Services',
   description: 'Professional home loan services and financial solutions for your dream home',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com',
   ogImage: '/og-image.jpg',

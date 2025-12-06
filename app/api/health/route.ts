@@ -9,7 +9,7 @@ export async function GET() {
     {
       status: 'ok',
       timestamp: new Date().toISOString(),
-      service: 'Home Loan Financial Services API',
+      service: 'Shivay Finance and Services API',
     },
     { status: 200 }
   );

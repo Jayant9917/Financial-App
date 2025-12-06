@@ -56,7 +56,7 @@ export function generateOrganizationSchema(
   return {
     '@context': 'https://schema.org',
     '@type': 'FinancialService',
-    name: data.name || 'Home Loan Financial Services',
+    name: data.name || 'Shivay Finance and Services',
     url: data.url || 'https://yourdomain.com',
     logo: data.logo,
     description: data.description,

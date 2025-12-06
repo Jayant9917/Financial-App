@@ -10,7 +10,21 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">Home Loans</h3>
+            <div className="flex items-center gap-3">
+              <div className="h-12 w-12 flex items-center justify-center">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="h-full w-full object-contain"
+                  aria-label="Home Loans Logo"
+                >
+                  <source src="/images/logo/real estate.webm" type="video/webm" />
+                </video>
+              </div>
+              <h3 className="text-lg font-semibold">Shivay Finance</h3>
+            </div>
             <p className="text-sm text-muted-foreground">
               Making Finance Simple, Fast & Transparent
             </p>
@@ -113,7 +127,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>© {currentYear} Home Loans. All rights reserved.</p>
+          <p>© {currentYear} Shivay Finance and Services. All rights reserved.</p>
         </div>
       </div>
     </footer>

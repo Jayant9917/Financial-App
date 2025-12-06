@@ -15,7 +15,7 @@ export function HeroSection() {
           <AnimatedSection variant="slideInLeft" className="space-y-4 sm:space-y-5 lg:space-y-6">
             <div className="space-y-3 sm:space-y-4">
               <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                Home Loans
+                Shivay Finance and Services
                 <span className="block text-primary mt-1 sm:mt-2">
                   Making Finance Simple, Fast & Transparent
                 </span>

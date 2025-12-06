@@ -11,7 +11,7 @@ import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 
 export const metadata = generatePageMetadata({
-  title: 'Home Loan Financial Services - Quick Approvals & Low Interest Rates',
+  title: 'Shivay Finance and Services - Quick Approvals & Low Interest Rates',
   description: 'Get your dream home with our hassle-free home loan services. Quick approvals, competitive rates from top banks, and flexible repayment plans. Apply now for Home Loan, LAP, Mortgage Loan, Balance Transfer & Top-Up Loan.',
   path: '/',
 });
