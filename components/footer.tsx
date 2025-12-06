@@ -38,14 +38,15 @@ export function Footer() {
           {/* Company Info */}
           <div className="space-y-4 sm:space-y-5">
             <div className="flex items-center gap-3">
-              <div className="h-14 w-14 sm:h-16 sm:w-16 flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl p-2 shadow-sm">
+              <div className="h-14 w-14 sm:h-16 sm:w-16 flex items-center justify-center flex-shrink-0 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl p-2 shadow-sm overflow-hidden">
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-cover scale-110"
                   aria-label="Shivay Finance Logo"
+                  style={{ display: 'block', margin: 0, padding: 0 }}
                 >
                   <source src="/images/logo/real estate.webm" type="video/webm" />
                 </video>
@@ -195,7 +196,7 @@ export function Footer() {
 
           {/* Contact Info */}
           <div className="space-y-4 sm:space-y-5">
-            <h3 className="text-lg sm:text-xl font-bold text-slate-900">Contact Us</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900">Get In Touch</h3>
             <div className="space-y-3 text-sm sm:text-base">
               <a
                 href="tel:+918197222439"

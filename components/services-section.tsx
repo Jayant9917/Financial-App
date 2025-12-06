@@ -17,7 +17,7 @@ const services = [
   },
   {
     icon: TrendingUp,
-    title: 'LAP | Mortgage Loan',
+    title: 'Mortgage Loan',
     description: 'Loan Against Property with competitive interest rates and quick processing.',
     iconColor: 'text-green-600',
     iconBg: 'bg-green-100',

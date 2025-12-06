@@ -19,7 +19,7 @@ export function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleScrollClick = (sectionId: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+  const handleScrollClick = (sectionId: string, e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
     e.preventDefault();
     
     // If we're on a different page, navigate to home first, then scroll
@@ -85,9 +85,14 @@ export function Navbar() {
           />
 
           <div className="flex items-center">
-            <NavbarButton as={Link} href="/apply-now" variant="primary">
+            <button
+              onClick={(e) => {
+                handleScrollClick('contact', e);
+              }}
+              className="px-6 py-3 rounded-md bg-white button bg-white text-black text-base font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center min-h-[44px] shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            >
               Apply Now
-            </NavbarButton>
+            </button>
           </div>
         </NavBody>
 
@@ -121,15 +126,16 @@ export function Navbar() {
             ))}
             <div className="flex w-full flex-col gap-3 sm:gap-4 pt-3 sm:pt-4">
               
-              <NavbarButton
-                as={Link}
-                href="/apply-now"
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full text-sm sm:text-base py-2 sm:py-3"
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleScrollClick('contact', e);
+                  setIsMobileMenuOpen(false);
+                }}
+                className="w-full text-sm sm:text-base py-2 sm:py-3 px-6 rounded-md bg-white button bg-white text-black text-base font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center min-h-[44px] shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
               >
                 Apply Now
-              </NavbarButton>
+              </button>
             </div>
           </MobileNavMenu>
         </MobileNav>

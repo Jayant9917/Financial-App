@@ -1,5 +1,6 @@
 'use client';
 
+import { usePathname, useRouter } from 'next/navigation';
 import { AnimatedSection } from '@/components/animated-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,12 +9,36 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export function ContactSection() {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // If we're on a different page, navigate to home first, then scroll
+    if (pathname !== '/') {
+      router.push('/');
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    } else {
+      // If we're already on home page, just scroll
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   return (
     <section id="contact" className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 to-white">
       <div className="container mx-auto px-4">
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
-            Get In Touch
+            Contact Us
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have questions? We're here to help you with all your home loan needs
@@ -43,24 +68,26 @@ export function ContactSection() {
                 <CardDescription className="mb-4">
                   Speak directly with our loan experts
                 </CardDescription>
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  className="w-full mt-auto bg-blue-50 border-2 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
-                >
-                  <a href="tel:+918197222439" className="flex items-center gap-2">
-                    <div className="h-5 w-5 relative">
-                      <Image
-                        src="/images/usedIcons/phone.png"
-                        alt="Phone icon"
-                        width={20}
-                        height={20}
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
-                    <span>+91 8197222439</span>
-                  </a>
-                </Button>
+                <div className="flex justify-center mt-auto">
+                  <Button 
+                    asChild 
+                    variant="outline" 
+                    className="w-56 mt-auto bg-blue-50 border-2 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
+                  >
+                    <a href="tel:+918197222439" className="flex items-center gap-2">
+                      <div className="h-5 w-5 relative">
+                        <Image
+                          src="/images/usedIcons/phone.png"
+                          alt="Phone icon"
+                          width={20}
+                          height={20}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                      <span>+91 8197222439</span>
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </AnimatedSection>
@@ -87,29 +114,31 @@ export function ContactSection() {
                 <CardDescription className="mb-4">
                   Chat with us on WhatsApp
                 </CardDescription>
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  className="w-full mt-auto bg-green-50 border-2 border-green-200 text-green-700 hover:bg-green-100 hover:border-green-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
-                >
-                  <a
-                    href="https://wa.me/918197222439"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2"
+                <div className="flex justify-center mt-auto">
+                  <Button 
+                    asChild 
+                    variant="outline" 
+                    className="w-56 mt-auto bg-green-50 border-2 border-green-200 text-green-700 hover:bg-green-100 hover:border-green-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
                   >
-                    <div className="h-5 w-5 relative">
-                      <Image
-                        src="/images/usedIcons/whatsapp.png"
-                        alt="WhatsApp icon"
-                        width={20}
-                        height={20}
-                        className="h-full w-full object-contain"
-                      />
-                    </div>
-                    <span>Message Us</span>
-                  </a>
-                </Button>
+                    <a
+                      href="https://wa.me/918197222439"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2"
+                    >
+                      <div className="h-5 w-5 relative">
+                        <Image
+                          src="/images/usedIcons/whatsapp.png"
+                          alt="WhatsApp icon"
+                          width={20}
+                          height={20}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                      <span>Message Us</span>
+                    </a>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </AnimatedSection>
@@ -128,16 +157,18 @@ export function ContactSection() {
                 <CardDescription className="mb-4">
                   Send us an email
                 </CardDescription>
-                <Button 
-                  asChild 
-                  variant="outline" 
-                  className="w-full mt-auto bg-purple-50 border-2 border-purple-200 text-purple-700 hover:bg-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
-                >
-                  <Link href="/contact" className="flex items-center gap-2">
-                    <Mail className="h-5 w-5" />
-                    <span>Contact Form</span>
-                  </Link>
-                </Button>
+                <div className="flex justify-center mt-auto">
+                  <Button 
+                    asChild 
+                    variant="outline" 
+                    className="w-56 mt-auto bg-purple-50 border-2 border-purple-200 text-purple-700 hover:bg-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
+                  >
+                    <Link href="/contact" className="flex items-center gap-2">
+                      <Mail className="h-5 w-5" />
+                      <span>Contact Form</span>
+                    </Link>
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </AnimatedSection>
@@ -152,7 +183,7 @@ export function ContactSection() {
                 Start your home loan application today and get one step closer to your dream home
               </p>
               <Button asChild size="lg" variant="secondary">
-                <Link href="/apply-now">Apply Now</Link>
+                <a href="#contact" onClick={handleScrollToContact}>Apply Now</a>
               </Button>
             </CardContent>
           </Card>

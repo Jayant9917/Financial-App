@@ -268,19 +268,20 @@ export const NavbarLogo = ({ href = "/" }: { href?: string }) => {
       href={href}
       className="relative z-20 flex items-center space-x-1.5 sm:space-x-2 px-1 sm:px-2 py-0.5 text-xs sm:text-sm font-normal text-black dark:text-white flex-shrink-0"
     >
-      <div className="h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center">
+      <div className="h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center overflow-hidden rounded-full bg-white/50 backdrop-blur-sm">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="h-full w-full object-contain"
+          className="h-full w-full object-cover scale-110"
           aria-label="Home Loans Logo"
+          style={{ display: 'block', margin: 0, padding: 0 }}
         >
           <source src="/images/logo/real estate.webm" type="video/webm" />
         </video>
       </div>
-      <span className="font-medium text-black dark:text-white text-xs sm:text-sm">Shivay Finance</span>
+      <span className="font-bold text-black dark:text-white text-xs sm:text-sm">Shivay Finance</span>
     </Link>
   );
 };

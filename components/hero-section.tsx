@@ -2,11 +2,36 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/animated-section';
 import { ArrowRight, Home } from 'lucide-react';
 
 export function HeroSection() {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleScrollToContact = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // If we're on a different page, navigate to home first, then scroll
+    if (pathname !== '/') {
+      router.push('/');
+      setTimeout(() => {
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+          contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    } else {
+      // If we're already on home page, just scroll
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-white py-6 sm:py-8 md:py-12 lg:py-20">
       <div className="container mx-auto px-4">
@@ -19,11 +44,11 @@ export function HeroSection() {
                   Shivay Finance and<br />
                   Services
                 </h1>
-                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary mt-2 sm:mt-3 md:mt-4">
+                <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary mt-2 sm:mt-3 md:mt-4">
                   Making Finance<br />
                   Simple, Fast &<br />
                   Transparent
-                </h3>
+                </h2>
               </div>
               <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
                 Get your dream home with our hassle-free home loan services. 
@@ -48,16 +73,6 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-              <Button 
-                asChild 
-                size="lg" 
-                className="group text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px] bg-gradient-to-r from-blue-700 to-blue-900 hover:from-blue-800 hover:to-blue-950 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg font-semibold"
-              >
-                <Link href="/apply-now">
-                  Apply Now
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
               <Button 
                 asChild 
                 variant="outline" 
@@ -120,7 +135,7 @@ export function HeroSection() {
                 alt="Home loan services - Professional financial solutions for your dream home"
                 fill
                 className="object-contain"
-                priority
+                loading="lazy"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
               />
             </div>
