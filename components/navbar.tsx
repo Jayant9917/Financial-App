@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   Navbar as ResizableNavbar,
   NavBody,
@@ -15,6 +16,31 @@ import {
 } from '@/components/ui/resizable-navbar';
 
 export function Navbar() {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleScrollClick = (sectionId: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // If we're on a different page, navigate to home first, then scroll
+    if (pathname !== '/') {
+      router.push('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    } else {
+      // If we're already on home page, just scroll
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
   const navItems = [
     {
       name: 'Home',
@@ -22,15 +48,21 @@ export function Navbar() {
     },
     {
       name: 'Services',
-      link: '/services',
+      link: '#services',
+      isScrollLink: true,
+      sectionId: 'services',
     },
     {
       name: 'About',
-      link: '/about',
+      link: '#about',
+      isScrollLink: true,
+      sectionId: 'about',
     },
     {
       name: 'Contact',
-      link: '/contact',
+      link: '#contact',
+      isScrollLink: true,
+      sectionId: 'contact',
     },
   ];
 
@@ -45,8 +77,10 @@ export function Navbar() {
 
           <NavItems 
             items={navItems} 
-            onItemClick={() => {
-              // Handle navigation click if needed
+            onItemClick={(item, e) => {
+              if (item.isScrollLink && item.sectionId) {
+                handleScrollClick(item.sectionId, e);
+              }
             }}
           />
 
@@ -74,20 +108,25 @@ export function Navbar() {
               <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors"
+                onClick={(e) => {
+                  if (item.isScrollLink && item.sectionId) {
+                    handleScrollClick(item.sectionId, e);
+                  }
+                  setIsMobileMenuOpen(false);
+                }}
+                className="relative text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors text-sm sm:text-base"
               >
-                <span className="block py-2">{item.name}</span>
+                <span className="block py-1.5 sm:py-2">{item.name}</span>
               </Link>
             ))}
-            <div className="flex w-full flex-col gap-4 pt-4">
+            <div className="flex w-full flex-col gap-3 sm:gap-4 pt-3 sm:pt-4">
               
               <NavbarButton
                 as={Link}
                 href="/apply-now"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
-                className="w-full"
+                className="w-full text-sm sm:text-base py-2 sm:py-3"
               >
                 Apply Now
               </NavbarButton>

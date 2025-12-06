@@ -17,18 +17,4 @@ export const SITE_CONFIG = {
   },
 } as const;
 
-export const API_ROUTES = {
-  LOAN_CALCULATOR: '/api/loan-calculator',
-  APPLY_LOAN: '/api/apply-loan',
-  CONTACT: '/api/contact',
-} as const;
-
-export const ROUTES = {
-  HOME: '/',
-  ABOUT: '/about',
-  SERVICES: '/services',
-  CONTACT: '/contact',
-  LOAN_CALCULATOR: '/loan-calculator',
-  APPLY_NOW: '/apply-now',
-} as const;
 

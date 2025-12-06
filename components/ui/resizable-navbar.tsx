@@ -27,9 +27,11 @@ interface NavItemsProps {
   items: {
     name: string;
     link: string;
+    isScrollLink?: boolean;
+    sectionId?: string;
   }[];
   className?: string;
-  onItemClick?: () => void;
+  onItemClick?: (item: { name: string; link: string; isScrollLink?: boolean; sectionId?: string }, e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 interface MobileNavProps {
@@ -123,9 +125,12 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       {items.map((item, idx) => (
         <Link
           onMouseEnter={() => setHovered(idx)}
-          onClick={() => {
+          onClick={(e) => {
+            if (item.isScrollLink) {
+              e.preventDefault();
+            }
             if (onItemClick) {
-              onItemClick();
+              onItemClick(item, e);
             }
           }}
           className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors cursor-pointer"
@@ -165,7 +170,7 @@ export const MobileNav = ({ children, className, visible }: MobileNavProps) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-2 lg:hidden",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-transparent px-0 py-1 lg:hidden",
         visible && "bg-white/80 dark:bg-neutral-950/80",
         className,
       )}
@@ -182,7 +187,7 @@ export const MobileNavHeader = ({
   return (
     <div
       className={cn(
-        "flex w-full flex-row items-center justify-between",
+        "flex w-full flex-row items-center justify-between relative z-[60]",
         className,
       )}
     >
@@ -227,11 +232,12 @@ export const MobileNavMenu = ({
       {isOpen && (
         <motion.div
           ref={menuRef}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2 }}
           className={cn(
-            "absolute inset-x-0 top-16 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-950",
+            "absolute inset-x-0 top-full mt-2 z-[55] flex w-full flex-col items-start justify-start gap-2 sm:gap-4 rounded-lg bg-white px-3 sm:px-4 py-4 sm:py-6 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-950",
             className,
           )}
         >
@@ -250,9 +256,9 @@ export const MobileNavToggle = ({
   onClick: () => void;
 }) => {
   return isOpen ? (
-    <IconX className="text-black dark:text-white" onClick={onClick} />
+    <IconX className="text-black dark:text-white h-5 w-5 sm:h-6 sm:w-6" onClick={onClick} />
   ) : (
-    <IconMenu2 className="text-black dark:text-white" onClick={onClick} />
+    <IconMenu2 className="text-black dark:text-white h-5 w-5 sm:h-6 sm:w-6" onClick={onClick} />
   );
 };
 
@@ -260,9 +266,9 @@ export const NavbarLogo = ({ href = "/" }: { href?: string }) => {
   return (
     <Link
       href={href}
-      className="relative z-20 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black dark:text-white flex-shrink-0"
+      className="relative z-20 flex items-center space-x-1.5 sm:space-x-2 px-1 sm:px-2 py-0.5 text-xs sm:text-sm font-normal text-black dark:text-white flex-shrink-0"
     >
-      <div className="h-14 w-14 sm:h-16 sm:w-16 flex items-center justify-center">
+      <div className="h-10 w-10 sm:h-12 sm:w-12 flex items-center justify-center">
         <video
           autoPlay
           loop
@@ -274,7 +280,7 @@ export const NavbarLogo = ({ href = "/" }: { href?: string }) => {
           <source src="/images/logo/real estate.webm" type="video/webm" />
         </video>
       </div>
-      <span className="font-medium text-black dark:text-white">Shivay Finance</span>
+      <span className="font-medium text-black dark:text-white text-xs sm:text-sm">Shivay Finance</span>
     </Link>
   );
 };

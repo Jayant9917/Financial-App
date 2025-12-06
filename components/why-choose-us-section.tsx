@@ -115,7 +115,7 @@ export function WhyChooseUsSection() {
   return (
     <section 
       ref={sectionRef}
-      id="why-choose-us" 
+      id="about" 
       className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 via-purple-50 to-orange-50"
     >
       <div className="container mx-auto px-4">

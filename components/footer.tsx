@@ -1,8 +1,35 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname, useRouter } from 'next/navigation';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleScrollClick = (sectionId: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
+    // If we're on a different page, navigate to home first, then scroll
+    if (pathname !== '/') {
+      router.push('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 300);
+    } else {
+      // If we're already on home page, just scroll
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
   return (
     <footer className="bg-gradient-to-br from-slate-50 via-white to-blue-50/30 border-t-1 border-purple-500">
@@ -95,7 +122,8 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/services" 
+                  href="#services" 
+                  onClick={(e) => handleScrollClick('services', e)}
                   className="text-slate-700 hover:text-blue-600 transition-all duration-200 inline-block hover:translate-x-1 transform font-medium"
                 >
                   Services
@@ -103,7 +131,8 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/about" 
+                  href="#about" 
+                  onClick={(e) => handleScrollClick('about', e)}
                   className="text-slate-700 hover:text-blue-600 transition-all duration-200 inline-block hover:translate-x-1 transform font-medium"
                 >
                   About Us
@@ -111,7 +140,8 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/contact" 
+                  href="#contact" 
+                  onClick={(e) => handleScrollClick('contact', e)}
                   className="text-slate-700 hover:text-blue-600 transition-all duration-200 inline-block hover:translate-x-1 transform font-medium"
                 >
                   Contact
@@ -126,7 +156,8 @@ export function Footer() {
             <ul className="space-y-3 text-sm sm:text-base">
               <li>
                 <Link 
-                  href="/services#home-loan" 
+                  href="#services" 
+                  onClick={(e) => handleScrollClick('services', e)}
                   className="text-slate-700 hover:text-purple-600 transition-all duration-200 inline-block hover:translate-x-1 transform font-medium"
                 >
                   Home Loan
@@ -134,7 +165,8 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/services#mortgage-loan" 
+                  href="#services" 
+                  onClick={(e) => handleScrollClick('services', e)}
                   className="text-slate-700 hover:text-purple-600 transition-all duration-200 inline-block hover:translate-x-1 transform font-medium"
                 >
                   Mortgage Loan
@@ -142,7 +174,8 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/services#balance-transfer" 
+                  href="#services" 
+                  onClick={(e) => handleScrollClick('services', e)}
                   className="text-slate-700 hover:text-purple-600 transition-all duration-200 inline-block hover:translate-x-1 transform font-medium"
                 >
                   Balance Transfer
@@ -150,7 +183,8 @@ export function Footer() {
               </li>
               <li>
                 <Link 
-                  href="/services#top-up-loan" 
+                  href="#services" 
+                  onClick={(e) => handleScrollClick('services', e)}
                   className="text-slate-700 hover:text-purple-600 transition-all duration-200 inline-block hover:translate-x-1 transform font-medium"
                 >
                   Top-Up Loan
