@@ -3,7 +3,7 @@
 import { AnimatedSection } from '@/components/animated-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Phone, MessageCircle, Mail, MapPin } from 'lucide-react';
+import { Phone, MessageCircle, Mail } from 'lucide-react';
 import Link from 'next/link';
 
 export function ContactSection() {
@@ -19,22 +19,22 @@ export function ContactSection() {
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <AnimatedSection variant="fadeInUp" delay={0.1}>
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card className="text-center hover:shadow-lg transition-shadow h-full flex flex-col">
               <CardHeader>
                 <div className="mb-4 flex justify-center">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Phone className="h-6 w-6 text-primary" />
+                  <div className="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center">
+                    <Phone className="h-7 w-7 text-blue-600" />
                   </div>
                 </div>
                 <CardTitle className="text-lg">Call Us</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow flex flex-col">
                 <CardDescription className="mb-4">
                   Speak directly with our loan experts
                 </CardDescription>
-                <Button asChild variant="outline" className="w-full">
+                <Button asChild variant="outline" className="w-full mt-auto">
                   <a href="tel:+918197222439">+91 8197222439</a>
                 </Button>
               </CardContent>
@@ -42,20 +42,31 @@ export function ContactSection() {
           </AnimatedSection>
 
           <AnimatedSection variant="fadeInUp" delay={0.2}>
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card className="text-center hover:shadow-lg transition-shadow h-full flex flex-col">
               <CardHeader>
                 <div className="mb-4 flex justify-center">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <MessageCircle className="h-6 w-6 text-primary" />
+                  <div className="h-14 w-14 rounded-full bg-green-100 flex items-center justify-center">
+                    <div className="h-8 w-8 flex items-center justify-center">
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="h-full w-full object-contain"
+                        aria-label="WhatsApp"
+                      >
+                        <source src="/images/usedIcons/Whatsapp default state animation.webm" type="video/webm" />
+                      </video>
+                    </div>
                   </div>
                 </div>
                 <CardTitle className="text-lg">WhatsApp</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow flex flex-col">
                 <CardDescription className="mb-4">
                   Chat with us on WhatsApp
                 </CardDescription>
-                <Button asChild variant="outline" className="w-full">
+                <Button asChild variant="outline" className="w-full mt-auto">
                   <a
                     href="https://wa.me/918197222439"
                     target="_blank"
@@ -69,40 +80,22 @@ export function ContactSection() {
           </AnimatedSection>
 
           <AnimatedSection variant="fadeInUp" delay={0.3}>
-            <Card className="text-center hover:shadow-lg transition-shadow">
+            <Card className="text-center hover:shadow-lg transition-shadow h-full flex flex-col">
               <CardHeader>
                 <div className="mb-4 flex justify-center">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Mail className="h-6 w-6 text-primary" />
+                  <div className="h-14 w-14 rounded-full bg-purple-100 flex items-center justify-center">
+                    <Mail className="h-7 w-7 text-purple-600" />
                   </div>
                 </div>
                 <CardTitle className="text-lg">Email</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-grow flex flex-col">
                 <CardDescription className="mb-4">
                   Send us an email
                 </CardDescription>
-                <Button asChild variant="outline" className="w-full">
+                <Button asChild variant="outline" className="w-full mt-auto">
                   <Link href="/contact">Contact Form</Link>
                 </Button>
-              </CardContent>
-            </Card>
-          </AnimatedSection>
-
-          <AnimatedSection variant="fadeInUp" delay={0.4}>
-            <Card className="text-center hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="mb-4 flex justify-center">
-                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                </div>
-                <CardTitle className="text-lg">Visit Us</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>
-                  Schedule a visit to our office
-                </CardDescription>
               </CardContent>
             </Card>
           </AnimatedSection>

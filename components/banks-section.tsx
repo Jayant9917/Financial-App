@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { AnimatedSection } from '@/components/animated-section';
 import { LogoLoop } from '@/components/LogoLoop';
 import type { LogoItem } from '@/components/LogoLoop';
+import { Building2, Shield, TrendingUp } from 'lucide-react';
 
 const banks: LogoItem[] = [
   { 
@@ -66,44 +67,72 @@ const banks: LogoItem[] = [
 
 export function BanksSection() {
   return (
-    <section id="banks" className="py-20 lg:py-32 bg-white">
-      <div className="container mx-auto px-4">
-        <AnimatedSection className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 mb-4">
-            <span className="text-3xl">🏦</span>
-            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+    <section id="banks" className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 via-white to-slate-50 relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10">
+        <AnimatedSection className="text-center mb-16">
+          <div className="inline-flex items-center justify-center gap-3 mb-6">
+            <div className="p-3 bg-primary/10 rounded-xl">
+              <Building2 className="h-6 w-6 text-primary" />
+            </div>
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-foreground">
               Partner Banks
             </h2>
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tie-ups with Bank of Baroda, HDFC Bank, Union Bank, Bandhan Bank, BOI, Axis & more
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            We have strategic partnerships with leading financial institutions to offer you the best home loan solutions
           </p>
+          
+          {/* Trust indicators */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-8">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Shield className="h-4 w-4 text-green-600" />
+              <span>Trusted Partners</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <TrendingUp className="h-4 w-4 text-blue-600" />
+              <span>Competitive Rates</span>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Building2 className="h-4 w-4 text-purple-600" />
+              <span>8+ Partner Banks</span>
+            </div>
+          </div>
         </AnimatedSection>
 
         <AnimatedSection className="mt-12">
           <div className="w-full max-w-7xl mx-auto">
             <div className="relative">
+              {/* Gradient overlays for seamless loop - hidden on mobile */}
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none"></div>
+              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none"></div>
+              
               <LogoLoop
                 logos={banks}
-                speed={100}
+                speed={150}
                 direction="left"
-                logoHeight={80}
-                gap={64}
+                logoHeight={90}
+                gap={48}
                 pauseOnHover={true}
                 fadeOut={false}
                 scaleOnHover={true}
                 ariaLabel="Partner bank logos"
-                className="py-8"
+                className="py-6"
                 renderItem={(item, key) => {
                   if ('src' in item) {
                     return (
-                      <div className="flex items-center justify-center px-6 py-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-all duration-300 h-24 min-w-[140px]">
+                      <div className="flex items-center justify-center px-8 py-6 bg-white rounded-xl border border-slate-200/80 hover:border-primary/30 hover:shadow-lg transition-all duration-300 h-28 min-w-[160px] group">
                         <Image
                           src={item.src}
                           alt={item.alt || item.title || 'Bank logo'}
                           width={item.width || 120}
                           height={item.height || 60}
-                          className="object-contain max-h-16 w-auto transition-all duration-300"
+                          className="object-contain max-h-14 w-auto transition-all duration-300 group-hover:scale-110"
                           loading="lazy"
                         />
                       </div>
@@ -114,6 +143,20 @@ export function BanksSection() {
               />
             </div>
           </div>
+        </AnimatedSection>
+
+        {/* Additional info */}
+        <AnimatedSection className="mt-12 text-center">
+          <p className="text-sm text-muted-foreground">
+            Tie-ups with <span className="font-semibold text-foreground">Bank of Baroda</span>,{' '}
+            <span className="font-semibold text-foreground">HDFC Bank</span>,{' '}
+            <span className="font-semibold text-foreground">State Bank of India</span>,{' '}
+            <span className="font-semibold text-foreground">ICICI Bank</span>,{' '}
+            <span className="font-semibold text-foreground">Axis Bank</span>,{' '}
+            <span className="font-semibold text-foreground">Punjab National Bank</span>,{' '}
+            <span className="font-semibold text-foreground">Bandhan Bank</span>,{' '}
+            <span className="font-semibold text-foreground">IndusInd Bank</span> & more
+          </p>
         </AnimatedSection>
       </div>
     </section>

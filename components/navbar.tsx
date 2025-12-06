@@ -50,7 +50,7 @@ export function Navbar() {
             }}
           />
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center">
             <NavbarButton as={Link} href="/apply-now" variant="primary">
               Apply Now
             </NavbarButton>

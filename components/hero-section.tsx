@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/animated-section';
-import { ArrowRight, Phone, MessageCircle } from 'lucide-react';
+import { ArrowRight, Phone, MessageCircle, Home } from 'lucide-react';
 
 export function HeroSection() {
   return (
@@ -14,12 +14,17 @@ export function HeroSection() {
           {/* Left Side - Text Content */}
           <AnimatedSection variant="slideInLeft" className="space-y-4 sm:space-y-5 lg:space-y-6">
             <div className="space-y-3 sm:space-y-4">
-              <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-                Shivay Finance and Services
-                <span className="block text-primary mt-1 sm:mt-2">
-                  Making Finance Simple, Fast & Transparent
-                </span>
-              </h1>
+              <div>
+                <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent">
+                  Shivay Finance and<br />
+                  Services
+                </h1>
+                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary mt-2 sm:mt-3 md:mt-4">
+                  Making Finance<br />
+                  Simple, Fast &<br />
+                  Transparent
+                </h3>
+              </div>
               <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
                 Get your dream home with our hassle-free home loan services. 
                 Quick approvals, competitive rates, and flexible repayment plans.
@@ -43,26 +48,40 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
-              <Button asChild size="lg" className="group text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px]">
+              <Button 
+                asChild 
+                size="lg" 
+                className="group text-sm sm:text-base px-6 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px] bg-gradient-to-r from-blue-700 to-blue-900 hover:from-blue-800 hover:to-blue-950 text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg font-semibold"
+              >
                 <Link href="/apply-now">
                   Apply Now
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-sm sm:text-base px-5 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px]">
+              <Button 
+                asChild 
+                variant="outline" 
+                size="lg" 
+                className="group text-sm sm:text-base px-5 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px] bg-white border-2 border-slate-200 hover:border-blue-500 hover:bg-blue-50 text-slate-700 hover:text-blue-700 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg font-medium"
+              >
                 <a href="tel:+918197222439">
-                  <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <Phone className="mr-2 h-4 w-4 sm:h-5 sm:w-5 transition-colors group-hover:text-blue-600" />
                   <span className="hidden sm:inline">+91 8197222439</span>
                   <span className="sm:hidden">Call</span>
                 </a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="text-sm sm:text-base px-5 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px]">
+              <Button 
+                asChild 
+                variant="outline" 
+                size="lg" 
+                className="group text-sm sm:text-base px-5 sm:px-8 py-5 sm:py-6 h-auto min-h-[48px] sm:min-h-[56px] bg-white border-2 border-slate-200 hover:border-green-500 hover:bg-green-50 text-slate-700 hover:text-green-700 shadow-md hover:shadow-lg transition-all duration-300 rounded-lg font-medium"
+              >
                 <a
                   href="https://wa.me/918197222439"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  <MessageCircle className="mr-2 h-4 w-4 sm:h-5 sm:w-5 transition-colors group-hover:text-green-600" />
                   WhatsApp
                 </a>
               </Button>

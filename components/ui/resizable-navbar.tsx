@@ -239,7 +239,7 @@ export const NavbarLogo = ({ href = "/" }: { href?: string }) => {
   return (
     <Link
       href={href}
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black dark:text-white"
+      className="relative z-20 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black dark:text-white flex-shrink-0"
     >
       <div className="h-14 w-14 sm:h-16 sm:w-16 flex items-center justify-center">
         <video
@@ -290,7 +290,7 @@ export const NavbarButton = ({
   return (
     <Tag
       href={href || undefined}
-      className={cn(baseStyles, variantStyles[variant], className)}
+      className={cn(baseStyles, variantStyles[variant], "flex-shrink-0", className)}
       {...props}
     >
       {children}
