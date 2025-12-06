@@ -37,7 +37,7 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full" style={{ position: 'relative' }}>
       <ResizableNavbar>
         {/* Desktop Navigation */}
         <NavBody>
@@ -51,9 +51,6 @@ export function Navbar() {
           />
 
           <div className="flex items-center gap-4">
-            <NavbarButton as={Link} href="/contact" variant="secondary">
-              Contact
-            </NavbarButton>
             <NavbarButton as={Link} href="/apply-now" variant="primary">
               Apply Now
             </NavbarButton>
@@ -84,15 +81,7 @@ export function Navbar() {
               </Link>
             ))}
             <div className="flex w-full flex-col gap-4 pt-4">
-              <NavbarButton
-                as={Link}
-                href="/contact"
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="secondary"
-                className="w-full"
-              >
-                Contact
-              </NavbarButton>
+              
               <NavbarButton
                 as={Link}
                 href="/apply-now"
