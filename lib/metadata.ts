@@ -67,12 +67,11 @@ export function generateMetadata({
         'max-snippet': -1,
       },
     },
-    verification: {
-      // Add your verification codes here when available
-      // google: 'your-google-verification-code',
-      // yandex: 'your-yandex-verification-code',
-      // bing: 'your-bing-verification-code',
-    },
+    // Add verification codes when available for Google Search Console, Bing, etc.
+    // verification: {
+    //   google: 'your-google-verification-code',
+    //   bing: 'your-bing-verification-code',
+    // },
   };
 }
 
