@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/animated-section';
+import { NumberTicker } from '@/components/ui/number-ticker';
 
 export function HeroSection() {
   const pathname = usePathname();
@@ -31,7 +32,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 to-white py-6 sm:py-8 md:py-12 lg:py-20">
+    <section className="relative overflow-hidden bg-white py-6 sm:py-8 md:py-12 lg:py-20">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Side - Text Content */}
@@ -43,9 +44,8 @@ export function HeroSection() {
                   Services
                 </h1>
                 <h2 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-primary mt-2 sm:mt-3 md:mt-4">
-                  Making Finance<br />
-                  Simple, Fast &<br />
-                  Transparent
+                  Your Trusted Home 
+                  <br /> Loan Partner 
                 </h2>
               </div>
               <p className="text-base sm:text-lg text-muted-foreground max-w-2xl">
@@ -54,19 +54,45 @@ export function HeroSection() {
               </p>
             </div>
 
-            {/* Features */}
-            <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm text-muted-foreground">
-              <span className="inline-flex items-center gap-1">
-                <span className="text-green-600">✓</span> Easy EMIs
-              </span>
-              <span className="mx-1 sm:mx-2">•</span>
-              <span className="inline-flex items-center gap-1">
-                <span className="text-green-600">✓</span> Quick Approvals
-              </span>
-              <span className="mx-1 sm:mx-2">•</span>
-              <span className="inline-flex items-center gap-1">
-                <span className="text-green-600">✓</span> Low Interest Rates
-              </span>
+            {/* Business Stats */}
+            <div className="pt-4 sm:pt-6 border-t border-slate-200">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0 sm:gap-4">
+                <div className="text-center sm:text-left py-3 sm:py-0 flex-1">
+                  <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600 leading-tight mb-1">
+                    <NumberTicker 
+                      value={5} 
+                      suffix="+" 
+                      delay={200}
+                      className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600"
+                    />
+                  </div>
+                  <div className="text-xs sm:text-xs md:text-sm text-slate-600 font-medium">Years in Business</div>
+                </div>
+                <div className="hidden sm:block w-px h-12 md:h-14 bg-slate-200 flex-shrink-0"></div>
+                <div className="text-center sm:text-left py-3 sm:py-0 flex-1 border-t sm:border-t-0 border-slate-200 sm:border-0">
+                  <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600 leading-tight mb-1">
+                    <NumberTicker 
+                      value={30} 
+                      suffix="+ Cr"
+                      delay={400}
+                      className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600"
+                    />
+                  </div>
+                  <div className="text-xs sm:text-xs md:text-sm text-slate-600 font-medium">Loans Disbursed</div>
+                </div>
+                <div className="hidden sm:block w-px h-12 md:h-14 bg-slate-200 flex-shrink-0"></div>
+                <div className="text-center sm:text-left py-3 sm:py-0 flex-1 border-t sm:border-t-0 border-slate-200 sm:border-0">
+                  <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600 leading-tight mb-1">
+                    <NumberTicker 
+                      value={500} 
+                      suffix="+"
+                      delay={600}
+                      className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600"
+                    />
+                  </div>
+                  <div className="text-xs sm:text-xs md:text-sm text-slate-600 font-medium">Loans Done</div>
+                </div>
+              </div>
             </div>
 
             {/* CTA Buttons */}
@@ -133,7 +159,8 @@ export function HeroSection() {
                 alt="Home loan services - Professional financial solutions for your dream home"
                 fill
                 className="object-contain"
-                loading="lazy"
+                priority
+                loading="eager"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
               />
             </div>

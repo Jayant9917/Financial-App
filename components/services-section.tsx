@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { AnimatedSection, AnimatedItem } from '@/components/animated-section';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Home, TrendingUp, RefreshCw, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -72,18 +73,37 @@ export function ServicesSection() {
                       className="object-cover group-hover:scale-110 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                     />
-                    
-                    {/* Icon Overlay */}
-                    <div className="absolute top-4 right-4">
-                      <div className={`h-14 w-14 rounded-xl ${service.iconBg} flex items-center justify-center shadow-lg`}>
-                        <Icon className={`h-7 w-7 ${service.iconColor}`} />
-                      </div>
-                    </div>
                   </div>
 
                   {/* Content Section */}
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-xl font-bold mt-2">{service.title}</CardTitle>
+                    <CardTitle className="text-xl font-bold mt-2 flex items-center gap-5">
+                      <motion.div 
+                        className={`h-11 w-11 rounded-lg ${service.iconBg} flex items-center justify-center flex-shrink-0 group-hover:shadow-lg transition-shadow duration-300`}
+                        initial={{ scale: 0, rotate: -180, opacity: 0 }}
+                        whileInView={{ scale: 1, rotate: 0, opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ 
+                          type: "spring", 
+                          stiffness: 200, 
+                          damping: 15,
+                          delay: index * 0.1 
+                        }}
+                        whileHover={{ 
+                          scale: 1.15, 
+                          rotate: [0, -10, 10, -10, 0],
+                          transition: { duration: 0.5 }
+                        }}
+                      >
+                        <motion.div
+                          whileHover={{ scale: 1.2 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                          <Icon className={`h-5 w-5 ${service.iconColor}`} />
+                        </motion.div>
+                      </motion.div>
+                      <span>{service.title}</span>
+                    </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <CardDescription className="text-base leading-relaxed">

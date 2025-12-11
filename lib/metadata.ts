@@ -7,10 +7,36 @@ interface GenerateMetadataProps {
   image?: string;
   noIndex?: boolean;
   path?: string;
+  keywords?: string[];
 }
 
+// Location-specific keywords for local SEO
+const LOCATION_KEYWORDS = [
+  'Home loan',
+  'Home loan in Indore',
+  'Home loan in Burhanpur',
+  'Home loan in Khandwa',
+  'Home loan DSA',
+  'DSA',
+  'Indore',
+  'Khandwa',
+  'Burhanpur',
+  'Home loan Indore',
+  'Home loan Burhanpur',
+  'Home loan Khandwa',
+  'DSA Indore',
+  'DSA Burhanpur',
+  'DSA Khandwa',
+  'Loan DSA',
+  'Home loan agent',
+  'Home loan broker',
+  'Best home loan Indore',
+  'Best home loan Burhanpur',
+  'Best home loan Khandwa',
+];
+
 /**
- * Generate SEO-optimized metadata for pages
+ * Generate SEO-optimized metadata for pages with location-specific keywords
  */
 export function generateMetadata({
   title,
@@ -18,6 +44,7 @@ export function generateMetadata({
   image,
   noIndex = false,
   path = '',
+  keywords = [],
 }: GenerateMetadataProps): Metadata {
   const pageTitle = title
     ? `${title} | ${SITE_CONFIG.name}`
@@ -25,10 +52,23 @@ export function generateMetadata({
   const pageDescription = description || SITE_CONFIG.description;
   const pageImage = image || SITE_CONFIG.ogImage;
   const pageUrl = `${SITE_CONFIG.url}${path}`;
+  
+  // Combine custom keywords with location keywords
+  const allKeywords = [
+    ...keywords,
+    ...LOCATION_KEYWORDS,
+    'Home Loan',
+    'Mortgage Loan',
+    'Balance Transfer',
+    'Top-Up Loan',
+    'LAP',
+    'Loan Against Property',
+  ].join(', ');
 
   return {
     title: pageTitle,
     description: pageDescription,
+    keywords: allKeywords,
     metadataBase: new URL(SITE_CONFIG.url),
     alternates: {
       canonical: pageUrl,

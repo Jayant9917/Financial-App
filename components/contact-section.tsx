@@ -69,24 +69,24 @@ export function ContactSection() {
                   Speak directly with our loan experts
                 </CardDescription>
                 <div className="flex justify-center mt-auto">
-                  <Button 
-                    asChild 
-                    variant="outline" 
+                <Button 
+                  asChild 
+                  variant="outline" 
                     className="w-56 mt-auto bg-blue-50 border-2 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
-                  >
-                    <a href="tel:+918197222439" className="flex items-center gap-2">
-                      <div className="h-5 w-5 relative">
-                        <Image
-                          src="/images/usedIcons/phone.png"
-                          alt="Phone icon"
-                          width={20}
-                          height={20}
-                          className="h-full w-full object-contain"
-                        />
-                      </div>
-                      <span>+91 8197222439</span>
-                    </a>
-                  </Button>
+                >
+                  <a href="tel:+918197222439" className="flex items-center gap-2">
+                    <div className="h-5 w-5 relative">
+                      <Image
+                        src="/images/usedIcons/phone.png"
+                        alt="Phone icon"
+                        width={20}
+                        height={20}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <span>+91 8197222439</span>
+                  </a>
+                </Button>
                 </div>
               </CardContent>
             </Card>
@@ -115,29 +115,29 @@ export function ContactSection() {
                   Chat with us on WhatsApp
                 </CardDescription>
                 <div className="flex justify-center mt-auto">
-                  <Button 
-                    asChild 
-                    variant="outline" 
+                <Button 
+                  asChild 
+                  variant="outline" 
                     className="w-56 mt-auto bg-green-50 border-2 border-green-200 text-green-700 hover:bg-green-100 hover:border-green-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
+                >
+                  <a
+                    href="https://wa.me/918197222439"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
                   >
-                    <a
-                      href="https://wa.me/918197222439"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2"
-                    >
-                      <div className="h-5 w-5 relative">
-                        <Image
-                          src="/images/usedIcons/whatsapp.png"
-                          alt="WhatsApp icon"
-                          width={20}
-                          height={20}
-                          className="h-full w-full object-contain"
-                        />
-                      </div>
-                      <span>Message Us</span>
-                    </a>
-                  </Button>
+                    <div className="h-5 w-5 relative">
+                      <Image
+                        src="/images/usedIcons/whatsapp.png"
+                        alt="WhatsApp icon"
+                        width={20}
+                        height={20}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <span>Message Us</span>
+                  </a>
+                </Button>
                 </div>
               </CardContent>
             </Card>
@@ -158,16 +158,16 @@ export function ContactSection() {
                   Send us an email
                 </CardDescription>
                 <div className="flex justify-center mt-auto">
-                  <Button 
-                    asChild 
-                    variant="outline" 
+                <Button 
+                  asChild 
+                  variant="outline" 
                     className="w-56 mt-auto bg-purple-50 border-2 border-purple-200 text-purple-700 hover:bg-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 px-4 flex items-center justify-center gap-2"
-                  >
-                    <Link href="/contact" className="flex items-center gap-2">
-                      <Mail className="h-5 w-5" />
-                      <span>Contact Form</span>
-                    </Link>
-                  </Button>
+                >
+                  <Link href="/contact" className="flex items-center gap-2">
+                    <Mail className="h-5 w-5" />
+                    <span>Contact Form</span>
+                  </Link>
+                </Button>
                 </div>
               </CardContent>
             </Card>

@@ -49,6 +49,28 @@ export interface FinancialServiceSchema {
   serviceType: string;
 }
 
+export interface LocalBusinessSchema {
+  '@context': string;
+  '@type': string;
+  name: string;
+  description: string;
+  url: string;
+  telephone: string;
+  address: {
+    '@type': string;
+    addressLocality: string;
+    addressRegion: string;
+    addressCountry: string;
+  };
+  geo?: {
+    '@type': string;
+    latitude?: string;
+    longitude?: string;
+  };
+  areaServed: string[];
+  serviceType: string;
+}
+
 /**
  * Generate organization structured data
  */
@@ -110,6 +132,31 @@ export function generateFinancialServiceSchema(
     },
     areaServed,
     serviceType: 'Home Loan',
+  };
+}
+
+/**
+ * Generate local business structured data for location-specific SEO
+ */
+export function generateLocalBusinessSchema(
+  data: Partial<LocalBusinessSchema>
+): LocalBusinessSchema {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: data.name || 'Shivay Finance and Services',
+    description: data.description || 'Professional home loan services in Indore, Burhanpur, and Khandwa',
+    url: data.url || 'https://yourdomain.com',
+    telephone: data.telephone || '+91-8197222439',
+    address: data.address || {
+      '@type': 'PostalAddress',
+      addressLocality: 'Indore',
+      addressRegion: 'Madhya Pradesh',
+      addressCountry: 'IN',
+    },
+    geo: data.geo,
+    areaServed: data.areaServed || ['Indore', 'Burhanpur', 'Khandwa', 'Madhya Pradesh', 'India'],
+    serviceType: data.serviceType || 'Home Loan DSA Services',
   };
 }
 

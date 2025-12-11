@@ -1,6 +1,6 @@
 import { generateMetadata as generatePageMetadata } from '@/lib/metadata';
 import { StructuredData } from '@/components/structured-data';
-import { generateWebSiteSchema, generateOrganizationSchema, generateFinancialServiceSchema } from '@/lib/structured-data';
+import { generateWebSiteSchema, generateOrganizationSchema, generateFinancialServiceSchema, generateLocalBusinessSchema } from '@/lib/structured-data';
 import { SITE_CONFIG } from '@/lib/constants';
 import { Navbar } from '@/components/navbar';
 import { HeroSection } from '@/components/hero-section';
@@ -11,8 +11,8 @@ import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 
 export const metadata = generatePageMetadata({
-  title: 'Shivay Finance and Services - Quick Approvals & Low Interest Rates',
-  description: 'Get your dream home with our hassle-free home loan services. Quick approvals, competitive rates from top banks, and flexible repayment plans. Apply now for Home Loan, LAP, Mortgage Loan, Balance Transfer & Top-Up Loan.',
+  title: 'Home Loan in Indore, Burhanpur, Khandwa | DSA Services | Quick Approvals',
+  description: 'Best Home Loan DSA in Indore, Burhanpur & Khandwa. Get quick approvals, low interest rates from top banks (HDFC, SBI, ICICI, Axis). Home Loan, LAP, Mortgage Loan, Balance Transfer & Top-Up Loan services. Apply now!',
   path: '/',
 });
 
@@ -28,16 +28,33 @@ export default function Home() {
         '@type': 'ContactPoint',
         telephone: '+91-8197222439',
         contactType: 'Customer Service',
-        areaServed: 'IN',
+        areaServed: 'Indore, Burhanpur, Khandwa, Madhya Pradesh, India',
         availableLanguage: 'en',
       },
+      sameAs: [
+        'https://www.instagram.com/shivayfinaceandservices/',
+      ],
     }),
     generateFinancialServiceSchema(
-      'Home Loan Services',
-      'Professional home loan services including Home Loan, LAP, Mortgage Loan, Balance Transfer, and Top-Up Loan with quick approvals and competitive rates.',
+      'Home Loan Services in Indore, Burhanpur, Khandwa',
+      'Professional home loan DSA services in Indore, Burhanpur, and Khandwa. Home Loan, LAP, Mortgage Loan, Balance Transfer, and Top-Up Loan with quick approvals and competitive rates from top banks.',
       SITE_CONFIG.name,
       'IN'
     ),
+    generateLocalBusinessSchema({
+      name: SITE_CONFIG.name,
+      description: 'Home Loan DSA Services in Indore, Burhanpur, and Khandwa. Quick approvals, competitive rates from top banks.',
+      url: SITE_CONFIG.url,
+      telephone: '+91-8197222439',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Indore',
+        addressRegion: 'Madhya Pradesh',
+        addressCountry: 'IN',
+      },
+      areaServed: ['Indore', 'Burhanpur', 'Khandwa', 'Madhya Pradesh', 'India'],
+      serviceType: 'Home Loan DSA Services',
+    }),
   ];
 
   return (

@@ -10,8 +10,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
 export const metadata = generatePageMetadata({
-  title: 'About Us - Shivay Finance and Services',
-  description: 'Learn about our home loan services. We make finance simple, fast, and transparent. Trusted by thousands of homeowners with quick approvals and competitive rates.',
+  title: 'About Us - Home Loan DSA in Indore, Burhanpur, Khandwa',
+  description: 'Home Loan DSA in Indore, Burhanpur & Khandwa. We make finance simple, fast, and transparent. Trusted by thousands of homeowners with quick approvals and competitive rates.',
   path: '/about',
 });
 

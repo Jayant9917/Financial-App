@@ -13,8 +13,8 @@ const poppins = Poppins({
 
 // Root metadata for SEO
 export const metadata: Metadata = generateSiteMetadata({
-  title: "Home Loan Financial Services",
-  description: "Professional home loan services and financial solutions for your dream home. Get competitive rates, expert advice, and fast approval.",
+  title: "Home Loan in Indore, Burhanpur, Khandwa | DSA Services",
+  description: "Home Loan DSA Services in Indore, Burhanpur & Khandwa. Professional home loan services with quick approvals, competitive rates from top banks. Home Loan, LAP, Mortgage Loan, Balance Transfer & Top-Up Loan.",
 });
 
 export default function RootLayout({
