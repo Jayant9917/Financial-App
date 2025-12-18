@@ -7,6 +7,8 @@ import { HeroSection } from '@/components/hero-section';
 import { ServicesSection } from '@/components/services-section';
 import { WhyChooseUsSection } from '@/components/why-choose-us-section';
 import { BanksSection } from '@/components/banks-section';
+import { StatsSection } from '@/components/stats-section';
+import { TestimonialsSection } from '@/components/testimonials-section';
 import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 
@@ -66,6 +68,8 @@ export default function Home() {
         <ServicesSection />
         <WhyChooseUsSection />
         <BanksSection />
+        <StatsSection />
+        <TestimonialsSection />
         <ContactSection />
       </main>
       <Footer />

@@ -257,25 +257,6 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Map Section - Full Width */}
-        <div className="mt-12 lg:mt-16">
-          <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-6 text-center">Our Location</h3>
-          <div className="w-full h-[400px] sm:h-[500px] lg:h-[600px] rounded-lg overflow-hidden shadow-lg border border-slate-200 relative">
-            <iframe
-              src={`https://www.google.com/maps?q=Shivay+Finance+and+Services@21.303358,76.223053&hl=en&z=20&output=embed&iwloc=near`}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Shivay Finance Location"
-              className="w-full h-full"
-            />
-          </div>
-          
-        </div>
-
         {/* Copyright Section */}
         <div className="mt-12 pt-8">
           <div className="text-center">

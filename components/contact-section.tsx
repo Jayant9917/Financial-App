@@ -34,7 +34,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-32 bg-gradient-to-br from-slate-50 to-white">
+    <section id="contact" className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-4">
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
@@ -47,7 +47,7 @@ export function ContactSection() {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <AnimatedSection variant="fadeInUp" delay={0.1}>
-            <Card className="text-center hover:shadow-lg transition-shadow h-full flex flex-col">
+            <Card className="text-center hover:shadow-lg transition-shadow h-full flex flex-col bg-white border border-gray-100 shadow-sm hover:shadow-md">
               <CardHeader>
                 <div className="mb-4 flex justify-center">
                   <div className="h-14 w-14 rounded-full bg-blue-100 flex items-center justify-center">
@@ -93,7 +93,7 @@ export function ContactSection() {
           </AnimatedSection>
 
           <AnimatedSection variant="fadeInUp" delay={0.2}>
-            <Card className="text-center hover:shadow-lg transition-shadow h-full flex flex-col">
+            <Card className="text-center hover:shadow-lg transition-shadow h-full flex flex-col bg-white border border-gray-100 shadow-sm hover:shadow-md">
               <CardHeader>
                 <div className="mb-4 flex justify-center">
                   <div className="h-14 w-14 rounded-full bg-green-100 flex items-center justify-center">
@@ -144,7 +144,7 @@ export function ContactSection() {
           </AnimatedSection>
 
           <AnimatedSection variant="fadeInUp" delay={0.3}>
-            <Card className="text-center hover:shadow-lg transition-shadow h-full flex flex-col">
+            <Card className="text-center hover:shadow-lg transition-shadow h-full flex flex-col bg-white border border-gray-100 shadow-sm hover:shadow-md">
               <CardHeader>
                 <div className="mb-4 flex justify-center">
                   <div className="h-14 w-14 rounded-full bg-purple-100 flex items-center justify-center">
@@ -176,13 +176,13 @@ export function ContactSection() {
 
         {/* CTA */}
         <AnimatedSection className="mt-12 text-center">
-          <Card className="max-w-2xl mx-auto bg-primary text-primary-foreground">
+            <Card className="max-w-2xl mx-auto bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg">
             <CardContent className="pt-6">
               <h3 className="text-2xl font-bold mb-4">Ready to Apply?</h3>
-              <p className="mb-6 text-primary-foreground/90">
+              <p className="mb-6 text-blue-100">
                 Start your home loan application today and get one step closer to your dream home
               </p>
-              <Button asChild size="lg" variant="secondary">
+              <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 hover:text-blue-800">
                 <a href="#contact" onClick={handleScrollToContact}>Apply Now</a>
               </Button>
             </CardContent>

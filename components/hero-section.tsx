@@ -54,47 +54,6 @@ export function HeroSection() {
               </p>
             </div>
 
-            {/* Business Stats */}
-            <div className="pt-4 sm:pt-6 border-t border-slate-200">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-0 sm:gap-4">
-                <div className="text-center sm:text-left py-3 sm:py-0 flex-1">
-                  <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600 leading-tight mb-1">
-                    <NumberTicker 
-                      value={5} 
-                      suffix="+" 
-                      delay={200}
-                      className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600"
-                    />
-                  </div>
-                  <div className="text-xs sm:text-xs md:text-sm text-slate-600 font-medium">Years in Business</div>
-                </div>
-                <div className="hidden sm:block w-px h-12 md:h-14 bg-slate-200 flex-shrink-0"></div>
-                <div className="text-center sm:text-left py-3 sm:py-0 flex-1 border-t sm:border-t-0 border-slate-200 sm:border-0">
-                  <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600 leading-tight mb-1">
-                    <NumberTicker 
-                      value={30} 
-                      suffix="+ Cr"
-                      delay={400}
-                      className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600"
-                    />
-                  </div>
-                  <div className="text-xs sm:text-xs md:text-sm text-slate-600 font-medium">Loans Disbursed</div>
-                </div>
-                <div className="hidden sm:block w-px h-12 md:h-14 bg-slate-200 flex-shrink-0"></div>
-                <div className="text-center sm:text-left py-3 sm:py-0 flex-1 border-t sm:border-t-0 border-slate-200 sm:border-0">
-                  <div className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600 leading-tight mb-1">
-                    <NumberTicker 
-                      value={500} 
-                      suffix="+"
-                      delay={600}
-                      className="text-2xl sm:text-2xl md:text-3xl font-bold text-blue-600"
-                    />
-                  </div>
-                  <div className="text-xs sm:text-xs md:text-sm text-slate-600 font-medium">Loans Done</div>
-                </div>
-              </div>
-            </div>
-
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4">
               <Button 
