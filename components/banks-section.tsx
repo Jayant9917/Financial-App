@@ -106,11 +106,11 @@ export function BanksSection() {
         </AnimatedSection>
 
         <AnimatedSection className="mt-12">
-          <div className="w-full max-w-7xl mx-auto">
+          <div className="w-full">
             <div className="relative">
-              {/* Gradient overlays for seamless loop - hidden on mobile */}
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none"></div>
-              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-50 via-slate-50/80 to-transparent z-10 pointer-events-none"></div>
+              {/* Subtle gradient overlays for seamless loop - hidden on mobile */}
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-50 via-slate-50/20 to-transparent z-10 pointer-events-none"></div>
+              <div className="hidden md:block absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-50 via-slate-50/20 to-transparent z-10 pointer-events-none"></div>
               
               <LogoLoop
                 logos={banks}

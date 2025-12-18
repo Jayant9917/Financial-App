@@ -12,7 +12,8 @@ const testimonials = [
     role: 'Home Owner, Indore',
     content: 'Shivay Finance made my home loan process incredibly smooth. Their team was professional and guided me at every step. Got the best interest rate in the market!',
     rating: 5,
-    image: 'https://randomuser.me/api/portraits/men/32.jpg'
+    image: '/images/testimonial/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg',
+    alt: 'Portrait of Rahul Sharma, satisfied home loan customer'
   },
   {
     id: 2,
@@ -20,7 +21,8 @@ const testimonials = [
     role: 'First-time Buyer, Khandwa',
     content: 'As a first-time home buyer, I was nervous about the loan process. The team at Shivay Finance explained everything clearly and helped me get approved quickly. Highly recommended!',
     rating: 5,
-    image: 'https://randomuser.me/api/portraits/women/44.jpg'
+    image: '/images/testimonial/christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg',
+    alt: 'Portrait of Priya Patel, first-time home buyer'
   },
   {
     id: 3,
@@ -28,7 +30,8 @@ const testimonials = [
     role: 'Investor, Burhanpur',
     content: 'I\'ve worked with many loan providers, but Shivay Finance stands out for their transparency and customer service. They helped me secure multiple property loans with ease.',
     rating: 4,
-    image: 'https://randomuser.me/api/portraits/men/29.jpg'
+    image: '/images/testimonial/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg',
+    alt: 'Portrait of Vikram Singh, property investor'
   }
 ];
 
@@ -55,16 +58,19 @@ export function TestimonialsSection() {
                 <CardContent className="p-0 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="relative h-12 w-12 rounded-full overflow-hidden bg-slate-100">
-                      <Image
-                        src={testimonial.image}
-                        alt={testimonial.name}
-                        width={48}
-                        height={48}
-                        className="object-cover h-full w-full"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).src = `https://ui-avatars.com/api/?name=${encodeURIComponent(testimonial.name)}&background=random`;
-                        }}
-                      />
+                      <div className="h-16 w-16 rounded-full overflow-hidden border-2 border-white shadow-md">
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.alt}
+                          width={64}
+                          height={64}
+                          className="h-full w-full object-cover"
+                          onError={(e) => {
+                            // Fallback to a placeholder if image fails to load
+                            e.currentTarget.src = '/images/testimonial/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg';
+                          }}
+                        />
+                      </div>
                     </div>
                     <div className="text-left">
                       <h4 className="font-semibold text-slate-900">{testimonial.name}</h4>

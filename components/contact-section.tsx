@@ -176,13 +176,13 @@ export function ContactSection() {
 
         {/* CTA */}
         <AnimatedSection className="mt-12 text-center">
-            <Card className="max-w-2xl mx-auto bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg">
+            <Card className="max-w-2xl mx-auto bg-[#0F172B] text-white shadow-lg">
             <CardContent className="pt-6">
               <h3 className="text-2xl font-bold mb-4">Ready to Apply?</h3>
-              <p className="mb-6 text-blue-100">
+              <p className="mb-6 text-blue-200">
                 Start your home loan application today and get one step closer to your dream home
               </p>
-              <Button asChild size="lg" className="bg-white text-blue-700 hover:bg-blue-50 hover:text-blue-800">
+              <Button asChild size="lg" className="bg-white text-[#0F172B] hover:bg-blue-50 hover:text-[#0F172B]">
                 <a href="#contact" onClick={handleScrollToContact}>Apply Now</a>
               </Button>
             </CardContent>
