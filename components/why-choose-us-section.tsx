@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { CheckCircle2, Clock, DollarSign, Users } from 'lucide-react';
+import { CheckCircle2, Clock, IndianRupee, Users } from 'lucide-react';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 
@@ -17,7 +17,7 @@ const features = [
     borderColor: 'border-blue-200',
   },
   {
-    icon: DollarSign,
+    icon: IndianRupee,
     title: 'Low-Interest Rates',
     description: 'Competitive interest rates from top banks to make your home affordable.',
     iconColor: 'text-green-600',

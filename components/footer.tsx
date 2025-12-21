@@ -48,7 +48,7 @@ export function Footer() {
                   aria-label="Shivay Finance Logo"
                   style={{ display: 'block', margin: 0, padding: 0 }}
                 >
-                  <source src="/images/logo/real estate.webm" type="video/webm" />
+                  <source src="/images/logo/real-estate.webm" type="video/webm" />
                 </video>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">Shivay Finance</h3>

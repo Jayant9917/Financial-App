@@ -13,7 +13,7 @@ const services = [
     description: 'Get the best home loan rates with flexible repayment options for your dream home.',
     iconColor: 'text-blue-600',
     iconBg: 'bg-blue-100',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop',
+    image: '/images/our-services/loanimg1.png',
     gradient: 'from-blue-50 to-blue-100',
   },
   {
@@ -22,7 +22,7 @@ const services = [
     description: 'Loan Against Property with competitive interest rates and quick processing.',
     iconColor: 'text-green-600',
     iconBg: 'bg-green-100',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop',
+    image: '/images/our-services/loanimg2.jpg',
     gradient: 'from-green-50 to-green-100',
   },
   {
@@ -31,7 +31,7 @@ const services = [
     description: 'Transfer your existing home loan to us and save on interest rates.',
     iconColor: 'text-purple-600',
     iconBg: 'bg-purple-100',
-    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop',
+    image: '/images/our-services/loanimg3.jpg',
     gradient: 'from-purple-50 to-purple-100',
   },
   {
@@ -40,7 +40,7 @@ const services = [
     description: 'Get additional funds on your existing home loan for renovation or other needs.',
     iconColor: 'text-orange-600',
     iconBg: 'bg-orange-100',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop',
+    image: '/images/our-services/loanimg4.jpg',
     gradient: 'from-orange-50 to-orange-100',
   },
 ];
@@ -76,8 +76,8 @@ export function ServicesSection() {
                   </div>
 
                   {/* Content Section */}
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-xl font-bold mt-2 flex items-center gap-5">
+                  <CardHeader className="pb-1">
+                    <CardTitle className="text-xl font-bold mt-1 flex items-center gap-3">
                       <motion.div 
                         className={`h-11 w-11 rounded-lg ${service.iconBg} flex items-center justify-center flex-shrink-0 group-hover:shadow-lg transition-shadow duration-300`}
                         initial={{ scale: 0, rotate: -180, opacity: 0 }}

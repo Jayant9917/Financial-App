@@ -25,7 +25,7 @@ export default function Home() {
       name: SITE_CONFIG.name,
       url: SITE_CONFIG.url,
       description: SITE_CONFIG.description,
-      logo: `${SITE_CONFIG.url}/images/logo/real estate.webm`,
+      logo: `${SITE_CONFIG.url}/images/logo/real-estate.webm`,
       contactPoint: {
         '@type': 'ContactPoint',
         telephone: '+91-8197222439',

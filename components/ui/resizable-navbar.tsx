@@ -273,7 +273,7 @@ export const NavbarLogo = ({ href = "/" }: { href?: string }) => {
           aria-label="Home Loans Logo"
           style={{ display: 'block', margin: 0, padding: 0 }}
         >
-          <source src="/images/logo/real estate.webm" type="video/webm" />
+          <source src="/images/logo/real-estate.webm" type="video/webm" />
         </video>
       </div>
       <span className="font-bold text-black dark:text-white text-xs sm:text-sm">Shivay Finance</span>
