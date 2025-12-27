@@ -72,7 +72,7 @@ export function ContactSection() {
                 <Button 
                   asChild 
                   variant="outline" 
-                  className="w-full sm:w-auto px-6 mt-auto bg-blue-50 border-2 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 flex items-center justify-center gap-2 whitespace-nowrap min-w-[180px]"
+                  className="mx-auto w-[180px] px-4 h-12 mt-auto bg-blue-50 border-2 border-blue-200 text-blue-700 hover:bg-blue-100 hover:border-blue-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl flex items-center justify-center gap-2 whitespace-nowrap"
                 >
                   <a href="tel:+918197222439" className="flex items-center gap-2">
                     <div className="h-5 w-5 relative">
@@ -118,7 +118,7 @@ export function ContactSection() {
                 <Button 
                   asChild 
                   variant="outline" 
-                  className="w-full sm:w-auto px-6 mt-auto bg-green-50 border-2 border-green-200 text-green-700 hover:bg-green-100 hover:border-green-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 flex items-center justify-center gap-2 whitespace-nowrap min-w-[180px]"
+                  className="mx-auto w-[180px] px-4 h-12 mt-auto bg-green-50 border-2 border-green-200 text-green-700 hover:bg-green-100 hover:border-green-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl flex items-center justify-center gap-2 whitespace-nowrap"
                 >
                   <a
                     href="https://wa.me/918197222439"
@@ -161,7 +161,7 @@ export function ContactSection() {
                 <Button 
                   asChild 
                   variant="outline" 
-                  className="w-full sm:w-auto px-6 mt-auto bg-purple-50 border-2 border-purple-200 text-purple-700 hover:bg-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl py-2 flex items-center justify-center gap-2 whitespace-nowrap min-w-[180px]"
+                  className="mx-auto w-[180px] px-4 h-12 mt-auto bg-purple-50 border-2 border-purple-200 text-purple-700 hover:bg-purple-100 hover:border-purple-300 shadow-sm hover:shadow-md transition-all duration-200 font-medium rounded-xl flex items-center justify-center gap-2 whitespace-nowrap"
                 >
                   <Link href="/contact" className="flex items-center gap-2">
                     <Mail className="h-5 w-5" />
@@ -182,7 +182,7 @@ export function ContactSection() {
               <p className="mb-6 text-blue-200">
                 Start your home loan application today and get one step closer to your dream home
               </p>
-              <Button asChild size="lg" className="w-full sm:w-auto px-8 bg-white text-[#0F172B] hover:bg-blue-50 hover:text-[#0F172B] whitespace-nowrap">
+              <Button asChild size="lg" className="mx-auto w-[200px] h-14 bg-white text-[#0F172B] hover:bg-blue-50 hover:text-[#0F172B] whitespace-nowrap text-base font-semibold">
                 <a href="#contact" onClick={handleScrollToContact}>Apply Now</a>
               </Button>
             </CardContent>
