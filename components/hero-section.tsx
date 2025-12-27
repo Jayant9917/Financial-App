@@ -69,6 +69,7 @@ export function HeroSection() {
                       alt="Phone icon"
                       width={20}
                       height={20}
+                      loading="lazy"
                       className="h-full w-full object-contain"
                     />
                   </div>
@@ -94,6 +95,7 @@ export function HeroSection() {
                       alt="WhatsApp icon"
                       width={20}
                       height={20}
+                      loading="lazy"
                       className="h-full w-full object-contain"
                     />
                   </div>
@@ -114,12 +116,14 @@ export function HeroSection() {
           <AnimatedSection variant="slideInRight" className="relative order-first lg:order-last">
             <div className="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[500px] xl:h-[600px] w-full">
               <Image
-                src="/images/hero/original-a7c149d43c8a3d25a99463557e409824.gif"
-                alt="Home loan services - Professional financial solutions for your dream home"
-                fill
-                className="object-contain"
+                src="/images/hero/original-a7c149d43c8a3d25a99463557e409824.webp"
+                alt="Professional home loan services in Indore, Burhanpur & Khandwa - Shivay Finance"
+                width={800}
+                height={600}
+                className="object-contain w-full h-full"
                 priority
                 loading="eager"
+                quality={85}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 50vw"
               />
             </div>

@@ -5,15 +5,14 @@
 
 export const SITE_CONFIG = {
   name: 'Shivay Finance and Services',
-  description: 'Professional home loan services and financial solutions for your dream home',
-  // Set NEXT_PUBLIC_SITE_URL environment variable in production
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com',
-  // OG image for social media sharing - create this file in /public when ready
-  ogImage: '/og-image.jpg',
+  description: 'Professional home loan services and financial solutions for your dream home in Indore, Burhanpur & Khandwa',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://shivayfinanceandservices.com',
+  ogImage: 'https://shivayfinanceandservices.com/og-image.jpg',
   links: {
-    // Update with actual social media links when available
-    twitter: undefined, // Add Twitter handle when available
-    instagram: 'https://www.instagram.com/shivayfinance/', // From footer
+    twitter: 'https://twitter.com/ShivayFinance', // Update with your actual Twitter handle if available
+    instagram: 'https://www.instagram.com/shivayfinance/',
+    facebook: 'https://www.facebook.com/ShivayFinance', // Add if available
+    linkedin: 'https://www.linkedin.com/company/shivay-finance', // Add if available
   },
 } as const;
 

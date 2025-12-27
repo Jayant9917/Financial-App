@@ -52,6 +52,8 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    qualities: [75, 85], // Add support for both 75 and 85 quality settings
+    unoptimized: !isProduction, // Enable unoptimized in development for faster builds,
     remotePatterns: [
       {
         protocol: 'https',
