@@ -63,20 +63,22 @@ export function ServicesSection() {
             const Icon = service.icon;
             return (
               <AnimatedItem key={index}>
-                <Card className="h-full hover:shadow-xl transition-all duration-300 overflow-hidden group border-0 shadow-md">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 overflow-hidden group border-0 shadow-md rounded-xl p-0">
                   {/* Image Section */}
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={`${service.title} service illustration`}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                    />
+                  <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
+                    <div className="absolute inset-0 scale-110 origin-center">
+                      <Image
+                        src={service.image}
+                        alt={`${service.title} service illustration`}
+                        fill
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                      />
+                    </div>
                   </div>
 
                   {/* Content Section */}
-                  <CardHeader className="pb-1">
+                  <CardHeader className="pb-1 px-6">
                     <CardTitle className="text-xl font-bold mt-1 flex items-center gap-3">
                       <motion.div 
                         className={`h-11 w-11 rounded-lg ${service.iconBg} flex items-center justify-center flex-shrink-0 group-hover:shadow-lg transition-shadow duration-300`}
@@ -105,7 +107,7 @@ export function ServicesSection() {
                       <span>{service.title}</span>
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="px-6 pb-6">
                     <CardDescription className="text-base leading-relaxed">
                       {service.description}
                     </CardDescription>

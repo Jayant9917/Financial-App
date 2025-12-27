@@ -2,36 +2,57 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { AnimatedSection, AnimatedItem } from '@/components/animated-section';
-import { Star } from 'lucide-react';
+import { Star, User } from 'lucide-react';
 import Image from 'next/image';
+// Function to generate a random date within the past year
+const getRandomDate = () => {
+  const now = new Date();
+  const pastYear = new Date(now);
+  pastYear.setFullYear(pastYear.getFullYear() - 1);
+  
+  // Get a random time between now and 1 year ago
+  const randomTime = pastYear.getTime() + Math.random() * (now.getTime() - pastYear.getTime());
+  const randomDate = new Date(randomTime);
+  
+  // Calculate time difference in months and years
+  const diffInMonths = (now.getMonth() - randomDate.getMonth() + 12 * (now.getFullYear() - randomDate.getFullYear()));
+  
+  if (diffInMonths < 1) {
+    const diffInDays = Math.floor((now.getTime() - randomDate.getTime()) / (1000 * 60 * 60 * 24));
+    if (diffInDays <= 1) return '1 day ago';
+    return `${diffInDays} days ago`;
+  } else if (diffInMonths < 12) {
+    return diffInMonths === 1 ? '1 month ago' : `${diffInMonths} months ago`;
+  } else {
+    const years = Math.floor(diffInMonths / 12);
+    return years === 1 ? '1 year ago' : `${years} years ago`;
+  }
+};
 
 const testimonials = [
   {
     id: 1,
-    name: 'Rahul Sharma',
-    role: 'Home Owner, Indore',
-    content: 'Shivay Finance made my home loan process incredibly smooth. Their team was professional and guided me at every step. Got the best interest rate in the market!',
+    name: 'Ritik Chourasiya',
+    role: 'Client',
+    content: '"A first class service, although this was a time consuming process due to hold ups both with the Registry office and the freeholders, I was happy with all the help given and it was a very professional service, I highly recommend this company."',
     rating: 5,
-    image: '/images/testimonial/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg',
-    alt: 'Portrait of Rahul Sharma, satisfied home loan customer'
+    timestamp: '2 months ago',
   },
   {
     id: 2,
-    name: 'Priya Patel',
-    role: 'First-time Buyer, Khandwa',
-    content: 'As a first-time home buyer, I was nervous about the loan process. The team at Shivay Finance explained everything clearly and helped me get approved quickly. Highly recommended!',
+    name: 'Adarsh Kushwaha',
+    role: 'Client',
+    content: '"Very cooperative, value for money, understand your choice and show accordingly... No waste of time at all. The team is very helpful, take full commission but give perfect service."',
     rating: 5,
-    image: '/images/testimonial/christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg',
-    alt: 'Portrait of Priya Patel, first-time home buyer'
+    timestamp: '3 weeks ago',
   },
   {
     id: 3,
-    name: 'Vikram Singh',
-    role: 'Investor, Burhanpur',
-    content: 'I\'ve worked with many loan providers, but Shivay Finance stands out for their transparency and customer service. They helped me secure multiple property loans with ease.',
-    rating: 4,
-    image: '/images/testimonial/christina-wocintechchat-com-0Zx1bDv5BNY-unsplash.jpg',
-    alt: 'Portrait of Vikram Singh, property investor'
+    name: 'Akash Shrivas',
+    role: 'Client',
+    content: '"Shivay Finance provided exceptional service throughout my home loan process. Their team was extremely professional, responsive, and went above and beyond to ensure I got the best possible deal. "',
+    rating: 5,
+    timestamp: '5 days ago',
   }
 ];
 
@@ -57,20 +78,8 @@ export function TestimonialsSection() {
               <Card className="h-full p-6 hover:shadow-lg transition-shadow duration-300 border border-slate-100">
                 <CardContent className="p-0 flex flex-col h-full">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="relative h-12 w-12 rounded-full overflow-hidden bg-slate-100">
-                      <div className="h-16 w-16 rounded-full overflow-hidden border-2 border-white shadow-md">
-                        <Image
-                          src={testimonial.image}
-                          alt={testimonial.alt}
-                          width={64}
-                          height={64}
-                          className="h-full w-full object-cover"
-                          onError={(e) => {
-                            // Fallback to a placeholder if image fails to load
-                            e.currentTarget.src = '/images/testimonial/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg';
-                          }}
-                        />
-                      </div>
+                    <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
+                      <User className="h-6 w-6 text-blue-600" />
                     </div>
                     <div className="text-left">
                       <h4 className="font-semibold text-slate-900">{testimonial.name}</h4>
@@ -80,7 +89,7 @@ export function TestimonialsSection() {
                   
                   <p className="text-slate-700 mb-4 flex-grow">{testimonial.content}</p>
                   
-                  <div className="flex items-center">
+                  <div className="flex items-center mb-3">
                     {[...Array(5)].map((_, i) => (
                       <Star
                         key={i}
@@ -89,7 +98,9 @@ export function TestimonialsSection() {
                         }`}
                       />
                     ))}
+                    <span className="ml-2 text-sm text-slate-500">{testimonial.timestamp || getRandomDate()}</span>
                   </div>
+                  
                 </CardContent>
               </Card>
             </AnimatedItem>
