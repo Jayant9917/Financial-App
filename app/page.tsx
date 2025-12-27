@@ -13,8 +13,8 @@ import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 
 export const metadata = generatePageMetadata({
-  title: 'Home Loan in Indore, Burhanpur, Khandwa | DSA Services | Quick Approvals',
-  description: 'Best Home Loan DSA in Indore, Burhanpur & Khandwa. Get quick approvals, low interest rates from top banks (HDFC, SBI, ICICI, Axis). Home Loan, LAP, Mortgage Loan, Balance Transfer & Top-Up Loan services. Apply now!',
+  title: 'Home Loan, Mortgage Loan & Property Loan in Indore, Bhopal, Delhi, Pune, Bangalore, Noida, Ghaziabad, Dehradun | DSA Services | Quick Approvals',
+  description: 'Best Home Loan, Mortgage Loan & Property Loan DSA in Indore, Bhopal, Delhi, Pune, Bangalore, Noida, Ghaziabad, Dehradun, Burhanpur, Khandwa & Raver. House & Flat purchase, Construction, Plot purchase, Loan against property, Takeover, Balance transfer & Top-up loans. Quick approvals from top banks!',
   path: '/',
 });
 
@@ -30,7 +30,7 @@ export default function Home() {
         '@type': 'ContactPoint',
         telephone: '+91-8197222439',
         contactType: 'Customer Service',
-        areaServed: 'Indore, Burhanpur, Khandwa, Madhya Pradesh, India',
+        areaServed: 'Indore, Bhopal, Delhi, Pune, Bangalore, Noida, Ghaziabad, Dehradun, Burhanpur, Khandwa, Raver, Madhya Pradesh, India',
         availableLanguage: 'en',
       },
       sameAs: [
@@ -38,14 +38,14 @@ export default function Home() {
       ],
     }),
     generateFinancialServiceSchema(
-      'Home Loan Services in Indore, Burhanpur, Khandwa',
-      'Professional home loan DSA services in Indore, Burhanpur, and Khandwa. Home Loan, LAP, Mortgage Loan, Balance Transfer, and Top-Up Loan with quick approvals and competitive rates from top banks.',
+      'Home Loan, Mortgage Loan & Property Loan Services in Indore, Bhopal, Delhi, Pune, Bangalore, Noida, Ghaziabad, Dehradun',
+      'Comprehensive home loan and property loan DSA services in Indore, Bhopal, Delhi, Pune, Bangalore, Noida, Ghaziabad, Dehradun, Burhanpur, Khandwa, and Raver. House & Flat purchase loans, House construction loans, Plot purchase + Construction loans, Loan against property, Home loan & Mortgage loan takeover, Balance transfer and Top-up loans with quick approvals and competitive rates from top banks.',
       SITE_CONFIG.name,
       'IN'
     ),
     generateLocalBusinessSchema({
       name: SITE_CONFIG.name,
-      description: 'Home Loan DSA Services in Indore, Burhanpur, and Khandwa. Quick approvals, competitive rates from top banks.',
+      description: 'Home Loan, Mortgage Loan & Property Loan DSA Services in Indore, Bhopal, Delhi, Pune, Bangalore, Noida, Ghaziabad, Dehradun, Burhanpur, Khandwa, and Raver. House & Flat purchase, Construction, Plot purchase, Loan against property, Takeover, Balance transfer & Top-up loans. Quick approvals, competitive rates from top banks.',
       url: SITE_CONFIG.url,
       telephone: '+91-8197222439',
       address: {
@@ -54,8 +54,8 @@ export default function Home() {
         addressRegion: 'Madhya Pradesh',
         addressCountry: 'IN',
       },
-      areaServed: ['Indore', 'Burhanpur', 'Khandwa', 'Madhya Pradesh', 'India'],
-      serviceType: 'Home Loan DSA Services',
+      areaServed: ['Indore', 'Bhopal', 'Delhi', 'Pune', 'Bangalore', 'Noida', 'Ghaziabad', 'Dehradun', 'Burhanpur', 'Khandwa', 'Raver', 'Madhya Pradesh', 'India'],
+      serviceType: 'Home Loan DSA Services, Mortgage Loan Services, Property Loan Services, Construction Loan Services, Balance Transfer Services',
     }),
   ];
 

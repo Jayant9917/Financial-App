@@ -145,7 +145,7 @@ export function generateLocalBusinessSchema(
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: data.name || 'Shivay Finance and Services',
-    description: data.description || 'Professional home loan services in Indore, Burhanpur, and Khandwa',
+    description: data.description || 'Professional home loan services in Indore, Bhopal, Delhi, Pune, Bangalore, Noida, Ghaziabad, Dehradun, Burhanpur, Khandwa, and Raver',
     url: data.url || 'https://yourdomain.com',
     telephone: data.telephone || '+91-8197222439',
     address: data.address || {
@@ -155,8 +155,62 @@ export function generateLocalBusinessSchema(
       addressCountry: 'IN',
     },
     geo: data.geo,
-    areaServed: data.areaServed || ['Indore', 'Burhanpur', 'Khandwa', 'Madhya Pradesh', 'India'],
+    areaServed: data.areaServed || ['Indore', 'Bhopal', 'Delhi', 'Pune', 'Bangalore', 'Noida', 'Ghaziabad', 'Dehradun', 'Burhanpur', 'Khandwa', 'Raver', 'Madhya Pradesh', 'India'],
     serviceType: data.serviceType || 'Home Loan DSA Services',
   };
+}
+
+/**
+ * Generate city-specific structured data for local SEO
+ */
+export function generateCitySpecificSchema(
+  cityName: string,
+  stateName: string,
+  coordinates: { lat: string; lng: string }
+): LocalBusinessSchema {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Shivay Finance and Services',
+    description: `Best Home Loan DSA and Mortgage Loan services in ${cityName}, ${stateName}. Quick approvals, competitive rates from top banks.`,
+    url: 'https://shivayfinanceandservices.com',
+    telephone: '+91-8197222439',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: cityName,
+      addressRegion: stateName,
+      addressCountry: 'IN',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: coordinates.lat,
+      longitude: coordinates.lng,
+    },
+    areaServed: [cityName, stateName, 'India'],
+    serviceType: 'Home Loan DSA Services, Mortgage Loan Services',
+  };
+}
+
+/**
+ * Generate multiple city schemas for all service areas
+ */
+export function generateAllCitySchemas(): LocalBusinessSchema[] {
+  const cities = [
+    { name: 'Indore', state: 'Madhya Pradesh', lat: '22.7196', lng: '75.8577' },
+    { name: 'Bhopal', state: 'Madhya Pradesh', lat: '23.2599', lng: '77.4126' },
+    { name: 'Delhi', state: 'Delhi', lat: '28.7041', lng: '77.1025' },
+    { name: 'Pune', state: 'Maharashtra', lat: '18.5204', lng: '73.8567' },
+    { name: 'Bangalore', state: 'Karnataka', lat: '12.9716', lng: '77.5946' },
+    { name: 'Noida', state: 'Uttar Pradesh', lat: '28.5355', lng: '77.3910' },
+    { name: 'Ghaziabad', state: 'Uttar Pradesh', lat: '28.6692', lng: '77.4538' },
+    { name: 'Dehradun', state: 'Uttarakhand', lat: '30.3165', lng: '78.0322' },
+    { name: 'Burhanpur', state: 'Madhya Pradesh', lat: '21.8256', lng: '76.0481' },
+    { name: 'Khandwa', state: 'Madhya Pradesh', lat: '21.8256', lng: '76.0481' },
+    { name: 'Raver', state: 'Maharashtra', lat: '21.2584', lng: '76.0567' },
+  ];
+
+  return cities.map(city => 
+    generateCitySpecificSchema(city.name, city.state, { lat: city.lat, lng: city.lng })
+  );
 }
 

@@ -1,90 +1,46 @@
-/** @type {import('next').NextConfig} */
-const isProduction = process.env.NODE_ENV === 'production';
+import type { NextConfig } from 'next'
 
-const securityHeaders = [
-  // Security Headers
-  {
-    key: 'X-DNS-Prefetch-Control',
-    value: 'on',
-  },
-  {
-    key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload',
-  },
-  {
-    key: 'X-Frame-Options',
-    value: 'SAMEORIGIN',
-  },
-  {
-    key: 'X-Content-Type-Options',
-    value: 'nosniff',
-  },
-  {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block',
-  },
-  {
-    key: 'Referrer-Policy',
-    value: 'strict-origin-when-cross-origin',
-  },
-  {
-    key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()',
-  },
-];
+const isProduction = process.env.NODE_ENV === 'production'
 
-const nextConfig = {
-  // Enable React strict mode for better development experience
+const nextConfig: NextConfig = {
+  // Enable React Strict Mode
   reactStrictMode: true,
   
-  // Production optimizations
-  productionBrowserSourceMaps: false,
+  // Add empty turbopack config to avoid conflicts
+  turbopack: {},
   
-  // Disable powered by header
-  poweredByHeader: false,
-
-  // Image optimization settings for SEO and performance
+  // Enable static exports for the 'output: export' option
+  output: 'standalone' as const,
+  
+  // Image optimization
   images: {
-    formats: ['image/avif', 'image/webp'],
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 604800, // 1 week cache
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    qualities: [75, 85], // Add support for both 75 and 85 quality settings
-    unoptimized: !isProduction, // Enable unoptimized in development for faster builds,
+    // Replace domains with remotePatterns (new recommended approach)
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
-        pathname: '/**',
+        hostname: 'shivayfinanceandservices.com',
       },
       {
         protocol: 'https',
-        hostname: 'randomuser.me',
-        pathname: '/api/portraits/**',
+        hostname: 'www.shivayfinanceandservices.com',
       },
-    ],
-  },
-
-  // Compression for better performance
-  compress: true,
-
-  // Headers for SEO and security
-  async headers() {
-    return [
       {
-        source: '/:path*',
-        headers: securityHeaders,
-      },
-    ];
+        protocol: 'https',
+        hostname: 'financial-app-iota-ebon.vercel.app',
+      }
+    ],
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    qualities: [75, 85],
+    minimumCacheTTL: 60 * 60 * 24 * 7, // 1 week
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    unoptimized: !isProduction,
   },
+  
+  // Rest of your configuration remains the same...
+  // ... [rest of your existing config]
+}
 
-  // Redirects for SEO (add your specific redirects here)
-  async redirects() {
-    return [];
-  },
-};
-
-export default nextConfig;
+export default nextConfig

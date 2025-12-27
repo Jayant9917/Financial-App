@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Shivay Finance and Services - Home Loan Solutions',
     short_name: 'Shivay Finance',
-    description: 'Get your dream home with hassle-free home loan services. Quick approvals, competitive rates from top banks (HDFC, SBI, ICICI, Axis, Bank of Baroda), and flexible repayment plans. Apply now for Home Loan, LAP, Mortgage Loan, Balance Transfer & Top-Up Loan.',
+    description: 'Get your dream home with hassle-free home loan services. Quick approvals, competitive rates from top banks (HDFC, SBI, ICICI, Axis, Bank of Baroda, PNB, Bandhan, IndusInd, Aavas, Hinduja, IIFL, Union Bank, AU Small Finance), and flexible repayment plans. Apply now for Home Loan, LAP, Mortgage Loan, Balance Transfer & Top-Up Loan.',
     start_url: '/',
     display: 'standalone',
     orientation: 'portrait-primary',

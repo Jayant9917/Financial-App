@@ -5,7 +5,7 @@
 
 export const SITE_CONFIG = {
   name: 'Shivay Finance and Services',
-  description: 'Professional home loan services and financial solutions for your dream home in Indore, Burhanpur & Khandwa',
+  description: 'Professional home loan services and financial solutions for your dream home in Indore, Burhanpur, Khandwa, Bhopal, Dehradun, Noida, Ghaziabad, Delhi, Raver, Pune & Bangalore',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://shivayfinanceandservices.com',
   ogImage: 'https://shivayfinanceandservices.com/og-image.jpg',
   links: {

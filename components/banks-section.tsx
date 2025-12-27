@@ -11,57 +11,92 @@ const banks: LogoItem[] = [
     src: '/icons/Bank of Baroda_idILUIUEgx_1.png',
     alt: 'Bank of Baroda logo - Partner bank for home loans',
     title: 'Bank of Baroda',
-    width: 120,
-    height: 60
+    width: 100,
+    height: 50
   },
   { 
     src: '/icons/HDFC Bank_idca3-DO88_0.png',
     alt: 'HDFC Bank logo - Partner bank for home loans',
     title: 'HDFC Bank',
-    width: 120,
-    height: 60
+    width: 100,
+    height: 50
   },
   { 
     src: '/icons/State Bank of India_id95r1JSPJ_1.png',
     alt: 'State Bank of India logo - Partner bank for home loans',
     title: 'State Bank of India',
-    width: 120,
-    height: 60
+    width: 100,
+    height: 50
   },
   { 
     src: '/icons/Bandhan Bank_id_RMN4OVg_1.png',
     alt: 'Bandhan Bank logo - Partner bank for home loans',
     title: 'Bandhan Bank',
-    width: 120,
-    height: 60
+    width: 100,
+    height: 50
   },
   { 
     src: '/icons/Punjab National Bank_idZvHwYdUU_1.png',
     alt: 'Punjab National Bank logo - Partner bank for home loans',
     title: 'Punjab National Bank',
-    width: 120,
-    height: 60
+    width: 100,
+    height: 50
   },
   { 
     src: '/icons/Axis Bank_idJBXQBHwi_1.png',
     alt: 'Axis Bank logo - Partner bank for home loans',
     title: 'Axis Bank',
-    width: 120,
-    height: 60
+    width: 100,
+    height: 50
   },
   { 
     src: '/icons/ICICI Bank_Logo_1.png',
     alt: 'ICICI Bank logo - Partner bank for home loans',
     title: 'ICICI Bank',
-    width: 120,
-    height: 60
+    width: 100,
+    height: 50
   },
   { 
-    src: '/icons/IndusInd Bank_idjlufWfcE_1.png',
+    src: '/icons/IndusInd Bank.png',
     alt: 'IndusInd Bank logo - Partner bank for home loans',
     title: 'IndusInd Bank',
-    width: 120,
-    height: 60
+    width: 100,
+    height: 50
+  },
+  { 
+    src: '/icons/Aavas.png',
+    alt: 'Aavas Financiers logo - Partner bank for home loans',
+    title: 'Aavas Financiers',
+    width: 90,
+    height: 45
+  },
+  { 
+    src: '/icons/Hinduja Group_idb41b-xLS_0.png',
+    alt: 'Hinduja Group logo - Partner bank for home loans',
+    title: 'Hinduja Group',
+    width: 90,
+    height: 45
+  },
+  { 
+    src: '/icons/IIFL Home Loan_idRFISdZSC_0.png',
+    alt: 'IIFL Home Loan logo - Partner bank for home loans',
+    title: 'IIFL Home Loan',
+    width: 90,
+    height: 45
+  },
+  { 
+    src: '/icons/Union.png',
+    alt: 'Union Bank of India logo - Partner bank for home loans',
+    title: 'Union Bank of India',
+    width: 100,
+    height: 50
+  },
+  { 
+    src: '/icons/au-small-finance-bank-limited-seeklogo.png',
+    alt: 'AU Small Finance Bank logo - Partner bank for home loans',
+    title: 'AU Small Finance Bank',
+    width: 90,
+    height: 45
   },
 ];
 
@@ -100,7 +135,7 @@ export function BanksSection() {
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Building2 className="h-4 w-4 text-purple-600" />
-              <span>8+ Partner Banks</span>
+              <span>13+ Partner Banks</span>
             </div>
           </div>
         </AnimatedSection>
@@ -155,7 +190,8 @@ export function BanksSection() {
             <span className="font-semibold text-foreground">Axis Bank</span>,{' '}
             <span className="font-semibold text-foreground">Punjab National Bank</span>,{' '}
             <span className="font-semibold text-foreground">Bandhan Bank</span>,{' '}
-            <span className="font-semibold text-foreground">IndusInd Bank</span> & more
+            <span className="font-semibold text-foreground">IndusInd Bank</span>{' '}
+             & more
           </p>
         </AnimatedSection>
       </div>

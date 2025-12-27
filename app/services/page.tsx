@@ -7,16 +7,16 @@ import { ServicesSection } from '@/components/services-section';
 import { Footer } from '@/components/footer';
 
 export const metadata = generatePageMetadata({
-  title: 'Home Loan Services in Indore, Burhanpur, Khandwa | DSA Services',
-  description: 'Home Loan DSA Services in Indore, Burhanpur & Khandwa. Home Loan, LAP, Mortgage Loan, Balance Transfer & Top-Up Loan with quick approvals and competitive rates from top banks.',
+  title: 'Home Loan, Mortgage Loan & Property Loan Services in Indore, Bhopal, Delhi, Pune, Bangalore, Noida, Ghaziabad, Dehradun | DSA Services',
+  description: 'Home Loan, Mortgage Loan & Property Loan DSA Services in Indore, Bhopal, Delhi, Pune, Bangalore, Noida, Ghaziabad, Dehradun, Burhanpur, Khandwa & Raver. House & Flat purchase, Construction, Plot purchase, Loan against property, Takeover, Balance transfer & Top-up loans with quick approvals.',
   path: '/services',
 });
 
 export default function ServicesPage() {
   const structuredData = [
     generateFinancialServiceSchema(
-      'Home Loan Services',
-      'Comprehensive home loan solutions including Home Loan, LAP, Mortgage Loan, Balance Transfer, and Top-Up Loan with competitive rates and flexible repayment options.',
+      'Complete Property Loan Services',
+      'Comprehensive property loan solutions including House & Flat purchase loans, House construction loans, Plot purchase + Construction loans, Loan against property, Home loan & Mortgage loan takeover, Balance transfer and Top-up loans with competitive rates and flexible repayment options.',
       SITE_CONFIG.name
     ),
   ];

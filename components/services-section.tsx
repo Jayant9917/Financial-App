@@ -117,6 +117,16 @@ export function ServicesSection() {
             );
           })}
         </AnimatedSection>
+
+        {/* Additional Services Info */}
+        <AnimatedSection className="mt-12 text-center">
+          <p className="text-lg text-muted-foreground">
+            We also provide <span className="font-semibold text-foreground">Flat Purchase Loan</span>,{' '}
+            <span className="font-semibold text-foreground">House Construction Loan</span>,{' '}
+            <span className="font-semibold text-foreground">Plot Purchase & Construction Loan</span>,{' '}
+            <span className="font-semibold text-foreground">Loan Against Property</span> & more
+          </p>
+        </AnimatedSection>
       </div>
     </section>
   );
