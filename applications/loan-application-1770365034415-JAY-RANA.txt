@@ -1,0 +1,41 @@
+
+      NEW HOME LOAN APPLICATION - Shivay Finance and Services
+      
+      === PERSONAL INFORMATION ===
+      Full Name: JAY RANA
+      Email: chilikapil198@gmail.com
+      Phone: 7819016236
+      Date of Birth: 2026-02-01
+      PAN Card: TGFDE1267J
+      
+      === EMPLOYMENT INFORMATION ===
+      Employment Type: salaried
+      Monthly Income: ₹19996
+      Company: hero
+      Work Experience: 0-1
+      
+      === LOAN REQUIREMENTS ===
+      Loan Amount: ₹500000
+      Loan Type: home-purchase
+      Loan Tenure: 10 years
+      Property Value: ₹100000
+      Property Location: deoband
+      Current EMI: ₹2
+      
+      === ADDRESS INFORMATION ===
+      Address: Jakhvala, Deoband, Saharanpur,
+      City: Deoband
+      State: Uttar Pradesh
+      Pincode: 247554
+      
+      === ADDITIONAL INFORMATION ===
+      Message: hii from jayant
+      
+      === SUBMISSION DETAILS ===
+      Submitted on: Friday, 6 February 2026 at 1:33:54 pm IST
+      IP Address: 127.0.0.1
+      
+      ---
+      This is an automated email from Shivay Finance and Services Website
+      Please contact the applicant within 24 hours
+    

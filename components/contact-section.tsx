@@ -183,7 +183,7 @@ export function ContactSection() {
                 Start your home loan application today and get one step closer to your dream home
               </p>
               <Button asChild size="lg" className="mx-auto w-[200px] h-14 bg-white text-[#0F172B] hover:bg-blue-50 hover:text-[#0F172B] whitespace-nowrap text-base font-semibold">
-                <a href="#contact" onClick={handleScrollToContact}>Apply Now</a>
+                <Link href="/apply-now">Apply Now</Link>
               </Button>
             </CardContent>
           </Card>
