@@ -28,8 +28,7 @@ module.exports = {
   // Add city-specific pages for better local SEO
   additionalPaths: async (config) => {
     const cities = [
-      'indore', 'bhopal', 'delhi', 'pune', 'bangalore', 'noida', 
-      'ghaziabad', 'dehradun', 'burhanpur', 'khandwa', 'raver'
+      'indore', 'khandwa', 'bhopal'
     ];
     
     return cities.map(city => ({

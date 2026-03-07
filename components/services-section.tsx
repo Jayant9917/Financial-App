@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { AnimatedSection, AnimatedItem } from '@/components/animated-section';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Home, TrendingUp, RefreshCw, ArrowUpRight } from 'lucide-react';
+import { Home, TrendingUp, RefreshCw, ArrowUpRight, Car } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
@@ -15,6 +15,15 @@ const services = [
     iconBg: 'bg-blue-100',
     image: '/images/our-services/loanimg1.png',
     gradient: 'from-blue-50 to-blue-100',
+  },
+  {
+    icon: Car,
+    title: 'Car Loan',
+    description: 'Get the best car loan rates with flexible repayment options for your dream car.',
+    iconColor: 'text-red-600',
+    iconBg: 'bg-red-100',
+    image: '/images/our-services/loanimg5.jpg',
+    gradient: 'from-red-50 to-red-100',
   },
   {
     icon: TrendingUp,
@@ -54,18 +63,18 @@ export function ServicesSection() {
             Our Services
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive home loan solutions tailored to meet your financial needs
+            Comprehensive home loan, car loan, and mortgage loan solutions tailored to meet your financial needs
           </p>
         </AnimatedSection>
 
-        <AnimatedSection stagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <AnimatedSection stagger className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
               <AnimatedItem key={index}>
                 <Card className="h-full hover:shadow-xl transition-all duration-300 overflow-hidden group border-0 shadow-md rounded-xl p-0">
                   {/* Image Section */}
-                  <div className="relative h-48 w-full overflow-hidden rounded-t-xl">
+                  <div className="relative h-60 w-full overflow-hidden rounded-t-xl">
                     <div className="absolute inset-0 scale-110 origin-center">
                       <Image
                         src={service.image}
@@ -121,7 +130,8 @@ export function ServicesSection() {
         {/* Additional Services Info */}
         <AnimatedSection className="mt-12 text-center">
           <p className="text-lg text-muted-foreground">
-            We also provide <span className="font-semibold text-foreground">Flat Purchase Loan</span>,{' '}
+            We also provide <span className="font-semibold text-foreground">Car Loan</span>,{' '}
+            <span className="font-semibold text-foreground">Flat Purchase Loan</span>,{' '}
             <span className="font-semibold text-foreground">House Construction Loan</span>,{' '}
             <span className="font-semibold text-foreground">Plot Purchase & Construction Loan</span>,{' '}
             <span className="font-semibold text-foreground">Loan Against Property</span> & more
