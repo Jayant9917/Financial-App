@@ -74,7 +74,7 @@ export function ServicesSection() {
               <AnimatedItem key={index}>
                 <Card className="h-full hover:shadow-xl transition-all duration-300 overflow-hidden group border-0 shadow-md rounded-xl p-0">
                   {/* Image Section */}
-                  <div className="relative h-60 w-full overflow-hidden rounded-t-xl">
+                  <div className="relative h-40 sm:h-48 md:h-52 lg:h-60 w-full overflow-hidden rounded-t-xl">
                     <div className="absolute inset-0 scale-110 origin-center">
                       <Image
                         src={service.image}
