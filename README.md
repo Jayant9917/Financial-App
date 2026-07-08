@@ -229,6 +229,14 @@ Deploy using your preferred platform:
 | `NEXT_PUBLIC_SITE_URL` | Base URL of your website (used for SEO and canonical URLs) | Yes | `http://localhost:3000` |
 | `NEXT_PUBLIC_GOOGLE_ANALYTICS` | Google Analytics 4 Measurement ID | No | - |
 | `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | Google Maps API Key (for location map) | No | - |
+| `CLIENT_EMAIL` | Single owner/client email for application notifications | Yes (for SMTP) | - |
+| `CLIENT_EMAILS` | Multiple recipient emails (comma-separated) for notifications | No | - |
+| `SMTP_HOST` | SMTP server host (for email sending fallback) | Yes (for SMTP) | - |
+| `SMTP_PORT` | SMTP server port | No | `587` |
+| `SMTP_USER` | SMTP username/email | Yes (for SMTP) | - |
+| `SMTP_PASSWORD` | SMTP app password/SMTP password | Yes (for SMTP) | - |
+
+SMTP only: Formspree has been removed from this codebase. Configure the SMTP variables above to enable mail delivery.
 
 ## 🧪 Testing
 
@@ -536,3 +544,6 @@ Private - Freelancing Project
 [Report Bug](https://github.com/your-repo/issues) · [Request Feature](https://github.com/your-repo/issues)
 
 </div>
+
+
+

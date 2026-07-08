@@ -27,7 +27,6 @@ const loanApplicationSchema = z.object({
   loanType: z.string().min(1, 'Please select loan type'),
   loanTenure: z.string().min(1, 'Please select loan tenure'),
   propertyLocation: z.string().min(5, 'Property location must be at least 5 characters'),
-  propertyValue: z.string().min(1, 'Property value is required'),
   currentEMI: z.string().optional(),
   address: z.string().min(10, 'Address must be at least 10 characters'),
   city: z.string().min(2, 'City must be at least 2 characters'),
@@ -418,25 +417,6 @@ export function LoanApplicationForm() {
                     </p>
                   )}
                 </div>
-                
-                <div className="space-y-3">
-                  <Label htmlFor="propertyValue" className="text-sm font-medium text-gray-700">Property Value (₹) *</Label>
-                  <Input
-                    id="propertyValue"
-                    type="number"
-                    autoComplete="off"
-                    {...register('propertyValue')}
-                    placeholder="1500000"
-                    className={`h-12 text-base border-gray-300 focus:border-blue-500 focus:ring-blue-500 ${errors.propertyValue ? 'border-red-500 ring-red-500' : ''}`}
-                  />
-                  {errors.propertyValue && (
-                    <p className="text-sm text-red-500 flex items-center gap-1">
-                      <AlertCircle className="h-4 w-4" />
-                      {errors.propertyValue.message}
-                    </p>
-                  )}
-                </div>
-                
                 <div className="space-y-3">
                   <Label htmlFor="propertyLocation" className="text-sm font-medium text-gray-700">Property Location *</Label>
                   <Input
@@ -595,3 +575,5 @@ export function LoanApplicationForm() {
     </AnimatedSection>
   );
 }
+
+
